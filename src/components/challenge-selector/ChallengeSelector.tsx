@@ -42,7 +42,7 @@ export default function ChallengeSelector() {
                   <TabsTrigger
                     key={key}
                     value={key}
-                    className="data-[state=active]:bg-amber-500 data-[state=active]:text-black text-white cursor-pointer text-xs sm:text-sm py-2"
+                    className="data-[state=active]:bg-amber-500 data-[state=active]:text-white text-white cursor-pointer text-xs sm:text-sm py-2"
                   >
                     {label}
                   </TabsTrigger>

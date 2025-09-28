@@ -11,7 +11,7 @@ export default function ButtonNav({ href, children, className, colorClass }: But
         "group relative inline-flex items-center justify-center select-none",
         " px-3 py-1 no-underline",
         // base amarillo con degradado diagonal
-        "bg-[linear-gradient(-30deg,#fbbf24_50%,#f59e0b_50%)] hover:bg-[linear-gradient(-30deg,#fbbf24_50%,#f59e0b_50%)]/90 text-black",
+        "bg-[linear-gradient(-30deg,#fbbf24_50%,#f59e0b_50%)] hover:bg-[linear-gradient(-30deg,#fbbf24_50%,#f59e0b_50%)]/90 text-white",
         `border-2 border-black shadow-xl/30 overflow-hidden`,
         "transition-colors duration-300",
         "focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/70 focus-visible:ring-offset-2",

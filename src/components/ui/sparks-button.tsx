@@ -167,7 +167,7 @@ export default function SparksButton({
       ref={rootRef}
       size={size}
       className={cn(
-        "relative h-14 w-fit rounded-xl bg-amber-500 text-black font-semibold transition-all duration-200 shadow-lg shadow-amber-500/50 hover:shadow-xl hover:shadow-amber-400/60 border-0 hover:cursor-pointer overflow-hidden",
+        "relative h-14 w-fit rounded-xl bg-amber-500 text-white font-semibold transition-all duration-200 shadow-lg shadow-amber-500/50 hover:shadow-xl hover:shadow-amber-400/60 border-0 hover:cursor-pointer overflow-hidden",
         // accesibilidad de foco
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
         className

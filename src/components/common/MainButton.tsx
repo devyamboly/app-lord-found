@@ -19,7 +19,7 @@ export default function MainButton({
     <Button
       size="lg"
       className={cn(
-        "h-14 w-full rounded-xl bg-amber-500 text-black font-semibold hover:bg-amber-400 transition-all duration-200 shadow-lg shadow-amber-500/50 hover:shadow-xl hover:shadow-amber-400/60 border-0 hover:cursor-pointer",
+        "h-14 w-full rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-all duration-200 shadow-lg shadow-amber-500/50 hover:shadow-xl hover:shadow-amber-400/60 border-0 hover:cursor-pointer",
         className
       )}
       onClick={onClick}
