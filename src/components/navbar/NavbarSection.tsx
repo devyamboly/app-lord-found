@@ -22,9 +22,9 @@ export default function NavbarSection(){
     return (
         <div role="navigation" className={`font-sans md:text-lg flex pb-10 pt-10 h-16 w-full justify-between items-center px-6 md:px-28  fixed md:sticky top-0 z-[90] mx-auto transition-all duration-500 ${
             scrolled 
-                ? 'shadow-lg shadow-gray-800/30 bg-gray-700/30 backdrop-blur-2xl border-b border-slate-800' 
-                : 'md:bg-transparent border-b border-transparent'
-        } bg-slate-900 md:bg-transparent`}>
+                ? 'md:backdrop-blur-md md:bg-black/40 md:border-b md:border-white/10 md:shadow-lg md:shadow-black/20' 
+                : 'md:backdrop-blur-sm md:bg-black/20 md:border-b md:border-white/5'
+        } bg-black`}>
             <img className="w-[50%] md:w-1/6" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
 
             <div className="hidden text-white text-md md:flex space-x-10 items-center">
@@ -46,9 +46,9 @@ export default function NavbarSection(){
                 colorClass="text-white"
             />
 
-            <div onClick={() => setOpen(false)} className={`fixed inset-x-0 top-16 bottom-0 bg-slate-900/70 transition-opacity duration-300 z-20 md:hidden ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} />
+            <div onClick={() => setOpen(false)} className={`fixed inset-x-0 top-16 bottom-0 bg-black/70 transition-opacity duration-300 z-20 md:hidden ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} />
 
-            <div className={`fixed top-14 bottom-0 right-0 w-64 h-screen bg-slate-900 text-white z-30 transform transition-transform duration-300 md:hidden ${open ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`fixed top-14 bottom-0 right-0 w-64 h-screen bg-black text-white z-30 transform transition-transform duration-300 md:hidden ${open ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="p-6 flex flex-col gap-4">
                     
                     {ITEMNAV.map((item:any) => (

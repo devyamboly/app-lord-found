@@ -18,7 +18,7 @@ export default function CryptoCarousel(){
         <section className="py-10 sm:py-12 w-screen" aria-label="Marcas aliadas">
             <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-8">
                 <h2 className="text-slate-100 text-center text-base sm:text-lg md:text-2xl font-medium mb-6 sm:mb-8">
-                    Ópera con confianza y seguridad con los mejores
+                    Opera con confianza y seguridad con los mejores
                 </h2>
 
                 <div className="group relative overflow-hidden py-3 sm:py-4">

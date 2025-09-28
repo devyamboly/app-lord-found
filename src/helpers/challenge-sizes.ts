@@ -15,7 +15,7 @@ export const sizeItem = cva(
   {
     variants: {
       active: {
-        true: "bg-amber-500/90 text-black border-amber-400 shadow",
+        true: "bg-amber-500/90 text-white border-amber-400 shadow",
         false: "bg-zinc-900/40 text-zinc-200 border-zinc-700 hover:bg-zinc-800",
       },
     },
