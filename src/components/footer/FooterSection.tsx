@@ -52,7 +52,7 @@ export default function FooterSection(){
                                         <a className=" hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href="#beneficios">Beneficios</a>
                                     </li>
                                     <li>
-                                        <a className="hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href="#challenge">Challenge</a>
+                                        <a className="hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href="#challenge">Precios</a>
                                     </li>
                                     <li>
                                         <a className="hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href="#testimonios">Testimonios</a>

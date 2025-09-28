@@ -35,7 +35,7 @@ export default function PortadaSection(){
             </div>
 
             <div className="w-full md:w-[50%] mb-4 flex justify-center items-center md:mr-32 mr-12">
-                <img className={`h-[20rem] md:h-[35rem]  transform transition-all duration-1000 ${rotate ? "rotate-[4deg]" : "-rotate-[4deg]"}`} src="./icono-destellos.png" alt="" />
+                <img className={`h-[27rem] scale-x-110 md:scale-x-100 w-screen md:h-[35rem]  transform transition-all duration-1000 ${rotate ? "rotate-[4deg]" : "-rotate-[4deg]"}`} src="./icono-destellos.png" alt="" />
             </div>
 
         </section>

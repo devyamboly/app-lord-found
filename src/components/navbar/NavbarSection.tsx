@@ -4,10 +4,14 @@ import ButtonMovil from "./ButtonMovil";
 import ButtonNav from "./ButtonNav";
 import {ITEMNAV} from "../../mocks/itemNav";    
 import ButtonLogin from "./ButtonLogin";
+import { useSmoothScroll } from "../../hooks/useSmoothScroll";
 
 export default function NavbarSection(){
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+
+    // Hook para smooth scrolling
+    useSmoothScroll();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -31,7 +35,7 @@ export default function NavbarSection(){
 
                 <ButtonLogin className="text-white" href="https://users.lordfound.com/register">Login</ButtonLogin>
 
-                <ButtonNav className="font-semibold  hover:scale-105 transition-transform duration-300" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
+                <ButtonNav className="hover:scale-105 transition-transform duration-300" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
             </div>
 
             <ButtonMovil 

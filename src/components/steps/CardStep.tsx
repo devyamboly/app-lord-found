@@ -11,7 +11,7 @@ export default function CardStep({
 }: CardStepProps){
 
     return (
-        <div
+        <div 
             className={`relative group rounded-2xl p-[1px] transition-all duration-500
                         ${highlight ? 'shadow-[0_0_0_1px_#F8D55555] bg-gradient-to-br from-[#F8D555] via-[#F8D55522] to-[#F8D55544]' : 'bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a]'}`}>
             {/* Halo animado (solo visible al hover) */}
