@@ -1,35 +1,22 @@
 
 
+import { PRODUCTS, PlanType } from '@/mocks/products';
 
 export default function PricingTable({ selectedPlan }: { selectedPlan: string }) {
-    const plans = [
-      { size: '$6k', fee: '$59.99', reward: '$117', maxLoss: '10% ($600)', dailyLoss: '5% ($300)', refund: '$59.99' },
-      { size: '$15k', fee: '$119.99', reward: '$292.50', maxLoss: '10% ($1,500)', dailyLoss: '5% ($750)', refund: '$119.99' },
-      { size: '$25k', fee: '$199.99', reward: '$487.50', maxLoss: '10% ($2,500)', dailyLoss: '5% ($1,250)', refund: '$199.99' },
-      { size: '$50k', fee: '$299.99', reward: '$975', maxLoss: '10% ($5,000)', dailyLoss: '5% ($2,500)', refund: '$299.99' },
-      { size: '$100k', fee: '$549.99', reward: '$1,950', maxLoss: '10% ($10,000)', dailyLoss: '5% ($5,000)', refund: '$549.99' },
-      { size: '$200k', fee: '$1,099.99', reward: '$3,900', maxLoss: '10% ($20,000)', dailyLoss: '5% ($10,000)', refund: '$1,099.99' }
-    ];
-  
-    const features = [
-      { label: '15% Performance Reward', subtitle: 'From Challenge Phase', type: 'header' },
-      { label: 'Objetivo de beneficios de la Fase 1', values: ['8%', '8%', '8%', '8%', '8%', '8%'] },
-      { label: 'Fase 2 Objetivo de beneficios', values: ['5%', '5%', '5%', '5%', '5%', '5%'] },
-      { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
-      { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
-      { label: 'Trading de noticias', values: ['✓', '✓', '✓', '✓', '✓', '✓'] },
-      { label: 'Recompensa por rendimiento Hasta', values: ['95%', '95%', '95%', '95%', '95%', '95%'] },
-      { label: 'Días mínimos de negociación', values: ['5 Days', '5 Days', '5 Days', '5 Days', '5 Days', '5 Days'] },
-      { label: 'Primera retirada', values: ['21 Days', '21 Days', '21 Days', '21 Days', '21 Days', '21 Days'] },
-      { label: 'Refundable Fee', subtitle: 'We refund the full price', key: 'refund' }
-    ];
+
+    const currentPlan = PRODUCTS[selectedPlan as PlanType];
+    
+    if (!currentPlan) return null;
+    
+    const plans = currentPlan.sizes;
+    const features = currentPlan.features;
   
     return (
 
       <div className="overflow-x-auto mx-auto inset-shadow-2xs shadow-amber-100 w-[85%]">
         <div className="min-w-[900px] border-2 border-amber-500/30 rounded-2xl overflow-hidden bg-gradient-to-b from-slate-900/95 to-black/95 backdrop-blur-sm">
           {/* Header Row */}
-          <div className="grid grid-cols-7 border-b border-amber-500/30">
+          <div className="grid grid-cols-6 border-b border-amber-500/30">
             <div className="col-span-1 p-4 sm:p-6 border-r border-amber-500/30 bg-black/50">
               <h3 className="text-white text-base sm:text-lg font-bold">Tamaño de la cuenta</h3>
             </div>
@@ -50,7 +37,7 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
           {features.map((feature, featureIdx) => (
             <div 
               key={featureIdx} 
-              className={`grid grid-cols-7 border-b last:border-b-0 border-amber-500/20 hover:bg-amber-500/5 transition-colors ${
+              className={`grid grid-cols-6 border-b last:border-b-0 border-amber-500/20 hover:bg-amber-500/5 transition-colors ${
                 feature.type === 'header' ? 'bg-amber-500/10' : ''
               }`}
             >
@@ -70,12 +57,15 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
               {/* Feature Values */}
               {plans.map((plan, planIdx) => {
                 let value;
-                if (feature.key === 'maxLoss') value = plan.maxLoss;
-                else if (feature.key === 'dailyLoss') value = plan.dailyLoss;
-                else if (feature.key === 'refund') value = plan.refund;
+                const key = feature.key;
+                if (key === 'maxLoss') value = plan.maxLoss;
+                else if (key === 'dailyLoss') value = plan.dailyLoss;
+                else if (key === 'refund') value = plan.refund;
+                else if (key === 'profitPhase1') value = plan.profitPhase1;
+                else if (key === 'profitPhase2') value = plan.profitPhase2;
                 else if (feature.type === 'header') value = plan.reward;
                 else value = feature.values?.[planIdx];
-  
+
                 return (
                   <div 
                     key={planIdx} 
