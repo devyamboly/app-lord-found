@@ -1,113 +1,66 @@
-"use client";
-import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { DollarSign, Check } from "lucide-react";
 
-import CtaButton from "@/components/ui/cta-button";
-import { RulesTable } from "@/components/challenge-selector/RulesTable";
+'use client';
+import { useState } from 'react';
+import PricingTable from './PricingTable';
 
-import { PhaseKind, AccountSize } from "@/types/challenges";
-import { sizes, sizeItem, currency } from "@/helpers/challenge-sizes";
-import { cn } from "@/lib/utils";
 
-import { CHALLENGE_URL } from "@/config/config";
-import { CHALLENGE_CONFIG } from "@/mocks/challenges";
+export default function ChallengeSelector(){
+  const [expandedLetter, setExpandedLetter] = useState<string | null>(null);
 
-export default function ChallengeSelector() {
-  const [phase, setPhase] = useState<PhaseKind>("one");
-  const [size, setSize] = useState<AccountSize>("10k");
+  const letters = [
+    { letter: 'L', word: 'LEGACY', color: 'bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600' },
+    { letter: 'O', word: 'ONE', color: 'bg-gradient-to-br from-orange-500 via-orange-600 to-red-500' },
+    { letter: 'R', word: 'ROYAL', color: 'bg-gradient-to-br from-yellow-500 via-amber-500 to-orange-500' },
+    { letter: 'D', word: 'DYNAMIC', color: 'bg-gradient-to-br from-amber-600 via-yellow-600 to-amber-700' }
+  ];
 
-  const price = CHALLENGE_CONFIG.fees[phase][size];
-  const rules = CHALLENGE_CONFIG.rules[phase];
-  return (
-    <section id="challenge" className="mx-auto w-full max-w-full p-4 md:py-8 md:pl-32 md:pr-24">
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        {/* Left: selectors + pricing card */}
-        <div className="space-y-6">
-          <div className="space-y-3">
-            <p className="flex items-center gap-3">
-              <span className="h-full w-1 bg-amber-400 py-4"></span>
-              <span className="text-sm font-semibold text-zinc-300">
-                Tipo de cuenta
-              </span>
-            </p>
-            <Tabs
-              value={phase}
-              onValueChange={(v) => setPhase(v as PhaseKind)}
-              className="w-full"
-            >
-              <TabsList className="grid w-full grid-cols-2 bg-zinc-900/60 rounded-lg">
-                {Object.entries(CHALLENGE_CONFIG.types).map(([key, label]) => (
-                  <TabsTrigger
-                    key={key}
-                    value={key}
-                    className="data-[state=active]:bg-amber-500 data-[state=active]:text-white text-white cursor-pointer text-xs sm:text-sm py-2"
-                  >
-                    {label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              <TabsContent value={phase} />
-            </Tabs>
-          </div>
+  const handleLetterClick = (letter: string) => {
+    setExpandedLetter(expandedLetter === letter ? null : letter);
+  };
 
-          <div className="space-y-3">
-            <p className="flex items-center gap-3">
-              <span className="h-full w-1 bg-amber-400 py-4"></span>
-              <span className="text-sm font-semibold text-zinc-300">
-                Tamaño de cuenta
-              </span>
-            </p>
-            <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
-              {sizes.map((s) => (
-                <button
-                  key={s}
-                  onClick={() => setSize(s)}
-                  className={cn(sizeItem({ active: size === s }))}
-                >
-                  ${s}
-                </button>
-              ))}
+  return(
+    <section className="py-6 sm:py-10 px-4">
+      <h2 className="text-white text-2xl sm:text-3xl md:text-4xl text-center font-bold mb-6 sm:mb-8">
+        ELIGE EL MEJOR <span className="text-amber-500 font-bold">PLAN</span>
+      </h2>
+      
+      <div className="mx-auto text-center font-bold flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 px-4 sm:px-6 md:px-8 py-4 sm:py-6 border-2 rounded-[2rem] sm:rounded-[3rem] md:rounded-[4rem] border-slate-600/50 backdrop-blur-sm bg-slate-900/20 w-fit max-w-[95%] md:max-w-[90%] lg:max-w-[70%]">
+        {letters.map(({ letter, word, color }, index) => (
+
+          <div key={letter} onClick={() => handleLetterClick(letter)}
+              className={`
+              relative cursor-pointer rounded-full transition-all duration-500 ease-in-out px-4 py-3 sm:px-5 sm:py-3 md:px-6 md:py-4 ${expandedLetter === letter ? `${color} text-white shadow-2xl shadow-amber-500/40 scale-105 sm:scale-110 md:px-8 lg:px-10 ring-2 ring-white/30` : 'bg-slate-800/80 text-amber-400 hover:bg-slate-700/90 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/20 border border-slate-600/50'} transform hover:-rotate-2 active:scale-95 `}
+            style={{
+              transitionDelay: `${index * 50}ms`
+            }}
+          >
+            <div className="relative overflow-hidden flex items-center justify-center min-h-[2rem] sm:min-h-[2.5rem]">
+              {/* Letra inicial */}
+              <h3 className={`font-extrabold text-xl sm:text-2xl md:text-3xl transition-all duration-500 ${expandedLetter === letter ? 'opacity-0 absolute scale-0' : 'opacity-100 scale-100'}`}>
+                {letter}
+              </h3>
+              
+              {/* Palabra completa */}
+              <h3 className={`font-extrabold text-base sm:text-lg md:text-xl lg:text-2xl whitespace-nowrap transition-all duration-500 ${expandedLetter === letter ? 'opacity-100 scale-100 translate-x-0':'opacity-0 scale-50 absolute translate-x-4'}`}>
+                {word}
+              </h3>
             </div>
+
+            {/* Efecto de brillo al expandir */}
+            {expandedLetter === letter && (
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 via-white/30 to-white/20 animate-pulse" />
+            )}
           </div>
-
-          <Card className="border-zinc-700 bg-gradient-to-b from-zinc-900/60 to-zinc-900/20">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-zinc-400 text-base">
-                One-Time Fee
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-200">
-                {currency(price)}
-              </div>
-              <CtaButton
-                icon={<DollarSign className="h-5 w-5 text-lg" />}
-                onClick={() => {
-                  window.location.href = CHALLENGE_URL;
-                }}
-              >
-                <span className="text-lg"> Comprar Challenge</span>
-              </CtaButton>
-              <div className="flex items-center gap-2 text-xs text-zinc-400">
-                <Check className="h-4 w-4" /> Sin suscripciones • Entrega
-                inmediata
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Right: rules table */}
-        <Card className="border-zinc-700 bg-zinc-900/40">
-          <CardHeader>
-            <CardTitle className="text-zinc-100">Parámetros</CardTitle>
-          </CardHeader>
-          <CardContent className="overflow-visible">
-            <RulesTable phase={phase} rows={rules} />
-          </CardContent>
-        </Card>
+        ))}
       </div>
+
+      {/* Pricing Table */}
+      {expandedLetter && (
+        <div className="mt-10 sm:mt-16 px-2 sm:px-4 animate-fade-in">
+          <PricingTable selectedPlan={expandedLetter} />
+        </div>
+      )}
     </section>
   );
 }
+
