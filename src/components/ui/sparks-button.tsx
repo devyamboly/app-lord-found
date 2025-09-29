@@ -30,6 +30,8 @@ export default function SparksButton({
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const vignetteRef = useRef<HTMLDivElement | null>(null);
   const sparkleTimelines = useRef<gsap.core.Timeline[]>([]);
+  const delayedCalls = useRef<gsap.core.Tween[]>([]);
+  const dotTimelines = useRef<gsap.core.Timeline[]>([]);
 
   useEffect(() => {
     if (!overlayRef.current || !rootRef.current) return;
@@ -39,28 +41,40 @@ export default function SparksButton({
       const button = rootRef.current!;
       const vignette = vignetteRef.current!;
       const sparkles = overlay.querySelectorAll(".sparkle");
-      const dots = overlay.querySelectorAll(".dot");
+      let dots = Array.from(overlay.querySelectorAll<HTMLDivElement>(".dot"));
 
-      // Dots: fondo espacial con pulso sutil
-      dots.forEach((dt) => {
-        const width = overlay.clientWidth;
-        const height = overlay.clientHeight;
-        gsap.set(dt, {
-          x: gsap.utils.random(4, width - 4),
-          y: gsap.utils.random(4, height - 4),
-          scale: gsap.utils.random(0.3, 0.8),
-          opacity: gsap.utils.random(0.1, 0.4),
-        });
+      const setupDots = () => {
+        dotTimelines.current.forEach((tl) => tl.kill());
+        dotTimelines.current = [];
 
-        // Pulso muy sutil para el fondo espacial
-        const tl = gsap.timeline({ repeat: -1, yoyo: true });
-        tl.to(dt, {
-          scale: `*=${gsap.utils.random(0.8, 1.2)}`,
-          opacity: gsap.utils.random(0.2, 0.6),
-          duration: gsap.utils.random(2, 4),
-          ease: "sine.inOut",
+        dots.forEach((dt) => {
+          const width = overlay.clientWidth;
+          const height = overlay.clientHeight;
+          gsap.set(dt, {
+            x: gsap.utils.random(4, width - 4),
+            y: gsap.utils.random(4, height - 4),
+            scale: gsap.utils.random(0.3, 0.8),
+            opacity: 0,
+            autoAlpha: 0,
+            display: "none",
+          });
+
+          const pulseScale = gsap.utils.random(0.9, 1.3);
+          const pulseDuration = gsap.utils.random(2, 4);
+
+          const dotTl = gsap.timeline({ repeat: -1, yoyo: true, paused: true });
+          dotTl.to(dt, {
+            scale: `*=${pulseScale}`,
+            opacity: gsap.utils.random(0.4, 0.8),
+            duration: pulseDuration,
+            ease: "sine.inOut",
+          });
+
+          dotTimelines.current.push(dotTl);
         });
-      });
+      };
+
+      setupDots();
 
       // Sparkles: cometas que salen desde abajo hacia arriba
       sparkles.forEach((sp, i) => {
@@ -114,6 +128,8 @@ export default function SparksButton({
           ease: "power2.out"
         });
         
+        gsap.set(dots, { display: "block" });
+        
         // Mostrar efecto de viñeta
         gsap.to(vignette, {
           opacity: 0.6,
@@ -123,13 +139,17 @@ export default function SparksButton({
         
         // Mostrar dots con más opacidad
         gsap.to(dots, {
-          opacity: 0.8,
+          autoAlpha: 0.8,
           duration: 0.3,
         });
+
+        // Activar animaciones de pulso de los dots
+        dotTimelines.current.forEach((tl) => tl.play());
         
         // Activar cometas con delays random
         sparkleTimelines.current.forEach((tl) => {
-          gsap.delayedCall(gsap.utils.random(0, 1.5), () => tl.restart(true));
+          const delay = gsap.delayedCall(gsap.utils.random(0, 1.5), () => tl.restart(true));
+          delayedCalls.current.push(delay);
         });
       };
 
@@ -149,16 +169,77 @@ export default function SparksButton({
           ease: "power2.out"
         });
         
-        // Ocultar dots
+        // Ocultar dots inmediatamente
+        gsap.killTweensOf(dots);
+        
+        // Pausar animaciones de pulso
+        dotTimelines.current.forEach((tl) => tl.pause(0));
+        
         gsap.to(dots, {
-          opacity: 0.3,
-          duration: 0.3,
+          autoAlpha: 0,
+          duration: 0.2,
+          onComplete: () => {
+            gsap.set(dots, { display: "none" });
+          },
         });
         
-        // Pausar y resetear cometas para permitir re-hover
-        sparkleTimelines.current.forEach((tl) => tl.pause(0));
+        // Cancelar todos los delayedCalls pendientes
+        delayedCalls.current.forEach((delay) => delay.kill());
+        delayedCalls.current = [];
+        
+        // Pausar y resetear cometas inmediatamente
+        sparkleTimelines.current.forEach((tl) => {
+          tl.pause(0);
+          tl.kill();
+        });
+        
         const sparkles = overlay.querySelectorAll('.sparkle');
-        gsap.set(sparkles, { opacity: 0, y: overlay.clientHeight + 20, scale: 0.5 });
+        gsap.killTweensOf(sparkles);
+        gsap.set(sparkles, { 
+          opacity: 0, 
+          y: overlay.clientHeight + 20, 
+          scale: 0.5 
+        });
+        
+        // Re-crear las timelines para el próximo hover
+        sparkleTimelines.current = [];
+        sparkles.forEach((sp, i) => {
+          const width = overlay.clientWidth;
+          const height = overlay.clientHeight;
+          const startX = gsap.utils.random(10, width - 10);
+          const startY = height + 20;
+          const endY = -30;
+          
+          gsap.set(sp, {
+            x: startX,
+            y: startY,
+            rotation: 0,
+            opacity: 0,
+            scale: 0.5,
+          });
+          
+          const tl = gsap.timeline({ 
+            repeat: -1, 
+            repeatDelay: gsap.utils.random(0.2, 2.0),
+            paused: true 
+          });
+          
+          tl.to(sp, {
+            y: endY,
+            opacity: 1,
+            scale: 1,
+            duration: gsap.utils.random(1.0, 2.0),
+            ease: "none",
+          })
+          .to(sp, {
+            opacity: 0,
+            scale: 0.3,
+            duration: 0.3,
+            ease: "power2.out",
+          }, "-=0.3");
+          
+          sparkleTimelines.current.push(tl);
+        });
       };
 
       button.addEventListener("mouseenter", handleMouseEnter);
@@ -166,15 +247,21 @@ export default function SparksButton({
 
       // Estado inicial
       gsap.set(overlay, { opacity: 1 });
-      gsap.set(dots, { opacity: 0.3 });
+      setupDots();
+      gsap.set(dots, { autoAlpha: 0, display: "none" });
       gsap.set(vignette, { opacity: 0 });
 
       // Cleanup
       return () => {
         button.removeEventListener("mouseenter", handleMouseEnter);
         button.removeEventListener("mouseleave", handleMouseLeave);
+        delayedCalls.current.forEach(delay => delay.kill());
+        delayedCalls.current = [];
         sparkleTimelines.current.forEach(tl => tl.kill());
         sparkleTimelines.current = [];
+        dotTimelines.current.forEach(tl => tl.kill());
+        dotTimelines.current = [];
+        dots = [];
       };
     }, overlayRef);
 
@@ -251,7 +338,8 @@ export default function SparksButton({
           {Array.from({ length: 15 }).map((_, i) => (
             <div
               key={`dt-${i}`}
-              className={`dot dt-${i + 1} absolute w-[3px] h-[3px] rounded-full`}
+              className={`dot dt-${i + 1} absolute w-[3px] h-[3px] rounded-full pointer-events-none`}
+              style={{ opacity: 0, display: "none" }}
             >
               <div className="absolute inset-0 bg-white/60" />
               <div className="absolute inset-0 bg-white/30 blur-[1px]" />
