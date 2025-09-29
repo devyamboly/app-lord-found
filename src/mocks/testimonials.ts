@@ -22,11 +22,4 @@ export const TESTIMONIALS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     imageSrc: "/testimonios/YY.webp",
   },
-  {
-    name: "Marta",
-    payout: 5005,
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    imageSrc: "/testimonios/MM-1.webp",
-  },
 ];
