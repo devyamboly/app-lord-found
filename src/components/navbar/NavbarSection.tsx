@@ -20,7 +20,7 @@ export default function NavbarSection(){
     }, []);
 
     return (
-        <div role="navigation" className={`font-sans md:text-lg flex pb-10 pt-10 h-16 w-full justify-between items-center px-6 md:px-28  fixed top-0 z-[90] mx-auto transition-all duration-500 ${
+        <div role="navigation" className={`font-sans md:text-lg flex bg-transparent backdrop-blur pb-10 pt-10 h-16 w-full justify-between items-center px-6 md:px-28  fixed top-0 z-[90] mx-auto transition-all duration-500 ${
             scrolled 
                 ? 'md:backdrop-blur-md md:bg-black/40 md:border-b md:border-white/10 md:shadow-lg md:shadow-black/20' 
                 : 'md:backdrop-blur-sm md:bg-black/20 md:border-b md:border-white/5'
