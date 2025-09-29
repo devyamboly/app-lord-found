@@ -4,7 +4,7 @@ import { CardStepProps } from "@/types/steps";
 
 export default function CardStep({
     step = 2,
-    title = 'Obtener cuenta Neocapital',
+    title = 'Obtener cuenta LordFound',
     description = 'Supera el reto y consigue una cuenta con fondos simulados.',
     icon,
     highlight = true

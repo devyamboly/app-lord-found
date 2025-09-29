@@ -11,7 +11,7 @@ const steps = [
     },
     {
         step: 2,
-        title: 'Obtener cuenta Neocapital',
+        title: 'Obtener cuenta LordFound',
         description: 'Supera el reto y consigue una cuenta con fondos simulados.',
         icon: <Trophy className="text-slate-200"/>,
         highlight: true
