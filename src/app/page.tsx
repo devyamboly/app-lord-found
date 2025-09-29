@@ -7,21 +7,40 @@ import RewardsSection from "@/components/rewards/RewardsSection";
 import TestimonialsSection from "@/components/testimonials/TestimonialsSection";
 import FAQSection from "@/components/faq/FAQSection";
 import CommunitySection from "@/components/community/CommunitySection";
+import SectionReveal from "@/components/common/SectionReveal";
 
 export default function Home() {
   return (
-    <div className=" grid place-content-center overflow-x-hidden ">
-      <div className="space-y-4">
-        <PortadaSection/>
-        <CryptoCarousel/>
-        <StepsSection />
-        <BenefitsSection />
-        <ChallengeSelector />
-        <RewardsSection />
-        <TestimonialsSection />
-        <FAQSection />
-        <CommunitySection />
+    <main className="w-full">
+      <div className="space-y-8">
+        <SectionReveal>
+          <PortadaSection/>
+        </SectionReveal>
+        <SectionReveal>
+          <CryptoCarousel/>
+        </SectionReveal>
+        <SectionReveal>
+          <StepsSection />
+        </SectionReveal>
+        <SectionReveal>
+          <BenefitsSection />
+        </SectionReveal>
+        <SectionReveal>
+          <ChallengeSelector />
+        </SectionReveal>
+        <SectionReveal>
+          <RewardsSection />
+        </SectionReveal>
+        <SectionReveal>
+          <TestimonialsSection />
+        </SectionReveal>
+        <SectionReveal>
+          <FAQSection />
+        </SectionReveal>
+        <SectionReveal>
+          <CommunitySection />
+        </SectionReveal>
       </div>
-    </div>
+    </main>
   );
 }
