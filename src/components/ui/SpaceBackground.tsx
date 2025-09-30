@@ -23,7 +23,7 @@ export default function KingdomBackground() {
     window.addEventListener('scroll', handleScroll);
 
     // Crear partículas doradas brillantes
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 60; i++) {
       const particle = document.createElement("div");
       particle.className = "golden-particle absolute rounded-full";
 
