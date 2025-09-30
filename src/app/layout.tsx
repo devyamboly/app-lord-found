@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavbarSection from "@/components/navbar/NavbarSection";
 import FooterSection from "@/components/footer/FooterSection";
-import SpaceBackground from "../components/ui/SpaceBackground";
+import KingdomBackground from "../components/ui/SpaceBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 relative overflow-hidden`}
       >
-        <SpaceBackground />
+        <KingdomBackground />
         <div className="relative z-[1] flex min-h-screen flex-col">
           <NavbarSection />
           <main className="flex-1">
