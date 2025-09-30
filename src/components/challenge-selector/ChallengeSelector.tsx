@@ -5,7 +5,7 @@ import PricingTable from './PricingTable';
 
 
 export default function ChallengeSelector(){
-  const [expandedLetter, setExpandedLetter] = useState<string | null>(null);
+  const [expandedLetter, setExpandedLetter] = useState<string | null>("L");
 
   const letters = [
     { letter: 'L', word: 'LEGACY', color: 'bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600' },

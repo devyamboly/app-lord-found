@@ -234,7 +234,6 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
     features: [
       { label: '25% Performance Reward', type: 'header' },
       { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['10%', '10%', '10%', '10%', '10%'] },
-      { label: 'Fase 2 Objetivo de beneficios', key: 'profitPhase2' as any, values: ['5%', '5%', '5%', '5%', '5%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
       { label: 'Días mínimos de negociación', values: ['5 Days', '5 Days', '5 Days', '5 Days', '5 Days'] },
@@ -306,7 +305,6 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
     features: [
       { label: '20% Performance Reward', type: 'header' },
       { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['10%', '10%', '10%', '10%', '10%'] },
-      { label: 'Fase 2 Objetivo de beneficios', key: 'profitPhase2' as any, values: ['6%', '6%', '6%', '6%', '6%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
       { label: 'Tipo de Drawdown', values: ['Dynamic', 'Dynamic', 'Dynamic', 'Dynamic', 'Dynamic'] },
