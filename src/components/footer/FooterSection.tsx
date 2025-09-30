@@ -6,7 +6,7 @@ export default function FooterSection(){
     const year = new Date().getFullYear();
 
     return(
-        <footer className="bg-slate-950 pt-14 sm:pt-16 px-4 sm:px-6 md:px-12 lg:px-16">
+        <footer className="bg-transparent pt-14 sm:pt-16 px-4 sm:px-6 md:px-12 lg:px-16">
             
             <div className="max-w-7xl mx-auto border-t border-l border-r rounded-t-3xl sm:rounded-t-4xl border-gray-700 pb-10 sm:pb-12">
                 <div className="pt-10  sm:pt-12 px-6 sm:px-8 md:px-10 border-b border-gray-700 pb-10 sm:pb-12">

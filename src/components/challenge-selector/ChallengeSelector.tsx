@@ -36,11 +36,17 @@ export default function ChallengeSelector(){
           >
             <div className="relative overflow-hidden flex items-center justify-center min-h-[2rem] sm:min-h-[2.5rem]">
 
-              <h3 className={`font-extrabold text-xl sm:text-2xl md:text-3xl transition-all duration-500 ${expandedLetter === letter ? 'opacity-0 absolute scale-0' : 'opacity-100 scale-100'}`}>
+              <h3
+                className={`font-extrabold text-xl sm:text-2xl md:text-3xl transition-all duration-500 ${expandedLetter === letter ? 'opacity-0 absolute scale-0' : 'opacity-100 scale-100'}`}
+                style={{ fontFamily: '"Times New Roman", serif' }}
+              >
                 {letter}
               </h3>
 
-              <h3 className={`font-extrabold text-base sm:text-lg md:text-xl lg:text-2xl whitespace-nowrap transition-all duration-500 ${expandedLetter === letter ? 'opacity-100 scale-100 translate-x-0':'opacity-0 scale-50 absolute translate-x-4'}`}>
+              <h3
+                className={`font-extrabold text-base sm:text-lg md:text-xl lg:text-2xl whitespace-nowrap transition-all duration-500 ${expandedLetter === letter ? 'opacity-100 scale-100 translate-x-0':'opacity-0 scale-50 absolute translate-x-4'}`}
+                style={{ fontFamily: '"Times New Roman", serif' }}
+              >
                 {word}
               </h3>
             </div>

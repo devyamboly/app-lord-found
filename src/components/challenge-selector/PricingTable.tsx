@@ -42,7 +42,7 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
                   key={value}
                   onClick={() => setSelectedSize(value)}
                   className={`
-                    relative px-5 py-2.5 rounded-xl font-extrabold text-sm transition-all duration-300 min-w-[70px]
+                    relative px-5 py-2.5 rounded-xl font-extrabold text-lg transition-all duration-300 min-w-[70px]
                     ${selectedSize === value
                       ? 'bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white shadow-xl shadow-amber-500/50 scale-110 ring-2 ring-amber-400/50'
                       : 'bg-slate-800/90 text-amber-400/80 border border-slate-600/50 hover:bg-slate-700 hover:text-amber-400 hover:scale-105 hover:border-amber-500/30'
@@ -52,7 +52,12 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
                   {selectedSize === value && (
                     <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white/20 via-white/10 to-transparent animate-pulse" />
                   )}
-                  <span className="relative">{label}</span>
+                  <span
+                    className="relative"
+                    style={{ fontFamily: '"Times New Roman", serif' }}
+                  >
+                    {label}
+                  </span>
                 </button>
               ))}
             </div>
@@ -69,12 +74,12 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
               </div>
               {filteredPlans.map((plan) => (
                 <div key={plan.sizeValue} className="p-4 flex flex-col items-center justify-center bg-black/30">
-                  <h2 className="text-white text-3xl font-extrabold mb-2">{plan.size}</h2>
+                  <h2 className="text-white text-3xl font-extrabold mb-2" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.size}</h2>
                   <button className="w-full px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 text-sm">
                     Get Plan
                   </button>
                   <p className="text-white/70 text-xs mt-2">
-                    Fee: <span className="text-amber-400 font-semibold">{plan.fee}</span>
+                    Fee: <span className="text-amber-400 font-semibold" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.fee}</span>
                   </p>
                 </div>
               ))}
@@ -146,12 +151,12 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
             </div>
             {plans.map((plan, idx) => (
               <div key={idx} className="p-3 sm:p-4 flex flex-col items-center justify-center border-r last:border-r-0 border-amber-500/30 bg-black/30">
-                <h2 className="text-white text-2xl sm:text-3xl font-extrabold mb-2">{plan.size}</h2>
+                <h2 className="text-white text-2xl sm:text-3xl font-extrabold mb-2" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.size}</h2>
                 <button className="w-full px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 text-sm sm:text-base">
                   Get Plan
                 </button>
                 <p className="text-white/70 text-xs sm:text-sm mt-2">
-                  Fee: <span className="text-amber-400 font-semibold">{plan.fee}</span>
+                  Fee: <span className="text-amber-400 font-semibold" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.fee}</span>
                 </p>
               </div>
             ))}
