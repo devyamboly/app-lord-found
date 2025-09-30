@@ -23,7 +23,7 @@ export default function KingdomBackground() {
     window.addEventListener('scroll', handleScroll);
 
     // Crear partículas doradas brillantes
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 30; i++) {
       const particle = document.createElement("div");
       particle.className = "golden-particle absolute rounded-full";
 
@@ -47,7 +47,7 @@ export default function KingdomBackground() {
       goldenParticles.push(particle);
     }
 
-    // Animación de partículas doradas con parallax
+    // Animación de partículas doradas con parallax, las qu suben y bajan
     goldenParticles.forEach((particle, index) => {
       const delay = Math.random() * 5;
       const duration = Math.random() * 4 + 3;
@@ -163,65 +163,65 @@ export default function KingdomBackground() {
       window.addEventListener('scroll', updateParallax);
     });
 
-    // Crear rayos de luz dorados
-    for (let i = 0; i < 3; i++) {
-      const ray = document.createElement("div");
-      ray.className = "light-ray absolute opacity-10";
+    // Crear los círculos de luz dorados
+    // for (let i = 0; i < 1; i++) {
+    //   const ray = document.createElement("div");
+    //   ray.className = "light-ray absolute opacity-10";
 
-      const size = Math.random() * 300 + 200;
-      ray.style.width = `${size}px`;
-      ray.style.height = `${size * 0.3}px`;
+    //   const size = Math.random() * 300 + 200;
+    //   ray.style.width = `${size}px`;
+    //   ray.style.height = `${size * 0.3}px`;
 
-      ray.style.left = `${Math.random() * 100}%`;
-      ray.style.top = `${Math.random() * 100}%`;
+    //   ray.style.left = `${Math.random() * 100}%`;
+    //   ray.style.top = `${Math.random() * 100}%`;
 
-      ray.style.background = `
-        linear-gradient(45deg,
-          transparent 0%,
-          rgba(251, 191, 36, 0.4) 20%,
-          rgba(245, 158, 11, 0.6) 50%,
-          rgba(251, 191, 36, 0.4) 80%,
-          transparent 100%
-        )
-      `;
+    //   ray.style.background = `
+    //     linear-gradient(45deg,
+    //       transparent 0%,
+    //       rgba(251, 191, 36, 0.4) 20%,
+    //       rgba(245, 158, 11, 0.6) 50%,
+    //       rgba(251, 191, 36, 0.4) 80%,
+    //       transparent 100%
+    //     )
+    //   `;
 
-      ray.style.transform = `rotate(${Math.random() * 360}deg)`;
-      ray.style.borderRadius = "50%";
+    //   ray.style.transform = `rotate(${Math.random() * 360}deg)`;
+    //   ray.style.borderRadius = "50%";
 
-      container.appendChild(ray);
-      lightRays.push(ray);
+    //   container.appendChild(ray);
+    //   lightRays.push(ray);
 
-      const parallaxMultiplier = 0.1 + (Math.random() * 0.2);
+    //   const parallaxMultiplier = 0.1 + (Math.random() * 0.2);
 
-      gsap.to(ray, {
-        rotation: 360,
-        scale: 1.1,
-        opacity: 0.15,
-        duration: Math.random() * 15 + 10,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        delay: Math.random() * 5,
-      });
+    //   gsap.to(ray, {
+    //     rotation: 360,
+    //     scale: 1.1,
+    //     opacity: 0.15,
+    //     duration: Math.random() * 15 + 10,
+    //     repeat: -1,
+    //     yoyo: true,
+    //     ease: "sine.inOut",
+    //     delay: Math.random() * 5,
+    //   });
 
-      gsap.to(ray, {
-        x: `random(-60, 60)`,
-        y: () => `calc(random(-40, 40) + ${scrollY * parallaxMultiplier}px)`,
-        duration: Math.random() * 20 + 15,
-        repeat: -1,
-        yoyo: true,
-        ease: "none",
-        delay: Math.random() * 8,
-      });
+    //   gsap.to(ray, {
+    //     x: `random(-60, 60)`,
+    //     y: () => `calc(random(-40, 40) + ${scrollY * parallaxMultiplier}px)`,
+    //     duration: Math.random() * 20 + 15,
+    //     repeat: -1,
+    //     yoyo: true,
+    //     ease: "none",
+    //     delay: Math.random() * 8,
+    //   });
 
-      const updateParallax = () => {
-        const currentScrollY = window.scrollY;
-        const yOffset = currentScrollY * parallaxMultiplier;
-        gsap.set(ray, { y: yOffset });
-      };
+    //   const updateParallax = () => {
+    //     const currentScrollY = window.scrollY;
+    //     const yOffset = currentScrollY * parallaxMultiplier;
+    //     gsap.set(ray, { y: yOffset });
+    //   };
 
-      window.addEventListener('scroll', updateParallax);
-    }
+    //   window.addEventListener('scroll', updateParallax);
+    // }
 
     // Crear niebla dorada sutil en el fondo
     for (let i = 0; i < 2; i++) {
@@ -312,27 +312,18 @@ export default function KingdomBackground() {
     };
   }, []);
 
+  const backgroundStyle = [
+    "radial-gradient(ellipse at 30% 70%, rgba(69, 52, 10, 0.15) 0%, transparent 40%)", //fondo para los circulos dorados
+    "radial-gradient(ellipse at 70% 30%, rgba(69, 52, 10, 0.1) 0%, transparent 50%)",//fondo para los circulos dorados
+    "linear-gradient(135deg, #000000 0%, #0a0a0a 30%, #1a1a1a 60%, #000000 100%)",
+    "radial-gradient(circle at 50% 50%, rgba(96, 191, 36, 0.03) 0%, rgba(0, 0, 0, 0.8) 70%, #000000 100%)"
+  ].join(", ");
+
   return (
     <div
       ref={containerRef}
       className="fixed inset-0 z-0 pointer-events-none"
-      style={{
-        background: `
-          radial-gradient(ellipse at 30% 70%, rgba(251, 191, 36, 0.15) 0%, transparent 40%),
-          radial-gradient(ellipse at 70% 30%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
-          linear-gradient(135deg,
-            #000000 0%,
-            #0a0a0a 30%,
-            #1a1a1a 60%,
-            #000000 100%
-          ),
-          radial-gradient(circle at 50% 50%,
-            rgba(251, 191, 36, 0.03) 0%,
-            rgba(0, 0, 0, 0.8) 70%,
-            #000000 100%
-          )
-        `,
-      }}
+      style={{ background: backgroundStyle }}
     />
   );
 }

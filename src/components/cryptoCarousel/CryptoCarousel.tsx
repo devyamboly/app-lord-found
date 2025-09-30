@@ -34,7 +34,7 @@ export default function CryptoCarousel(){
                                     <img
                                         src={src}
                                         alt="logo partner"
-                                        className="max-h-full max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity"/>
+                                        className="max-h-full max-w-full object-contain brightness-125 saturate-[1.8] contrast-110 transition-opacity"/>
                                 </div>
                             ))}
                         </div>

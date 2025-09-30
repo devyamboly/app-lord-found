@@ -23,7 +23,7 @@ export default function NavbarSection(){
         <nav role="navigation" className={`font-sans md:text-lg flex md:bg-transparent backdrop-blur h-16 sm:h-20 w-full justify-between items-center px-4 sm:px-6 md:px-12 lg:px-28 fixed top-0 z-[90] mx-auto transition-all duration-500 ${
             scrolled 
                 ? 'md:backdrop-blur-md md:bg-black/40 md:border-b md:border-white/10 md:shadow-lg md:shadow-black/20' 
-                : 'md:backdrop-blur-sm md:bg-black/20 md:border-b md:border-white/5'
+                : ' md:bg-black/20 md:border-b-0 md:border-white/5'
         } bg-black`}>
             <img className="w-32 sm:w-40 md:w-44 lg:w-48" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
 
