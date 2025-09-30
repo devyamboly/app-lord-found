@@ -123,13 +123,25 @@
   
   /* Scroll offset para navbar fijo */
   html {
-    scroll-padding-top: 5rem; /* 80px */
+    scroll-padding-top: 4rem; /* 64px mobile */
     scroll-behavior: smooth;
+  }
+  
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 5rem; /* 80px tablet+ */
+    }
   }
   
   /* Asegurar que las secciones tengan el offset correcto */
   section[id] {
-    scroll-margin-top: 5rem; /* 80px */
+    scroll-margin-top: 4rem; /* 64px mobile */
+  }
+  
+  @media (min-width: 640px) {
+    section[id] {
+      scroll-margin-top: 5rem; /* 80px tablet+ */
+    }
   }
 }
 /* Estilos personalizados para el carrousel */

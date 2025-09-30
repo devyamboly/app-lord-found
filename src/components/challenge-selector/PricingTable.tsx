@@ -12,7 +12,6 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
     const plans = currentPlan.sizes;
     const features = currentPlan.features;
     
-    // Obtener el primer tamaño disponible dinámicamente
     const [selectedSize, setSelectedSize] = useState<AccountSize>(plans[0]?.sizeValue || '5k');
     
     // Reset al primer tamaño cuando cambia el plan
@@ -22,10 +21,8 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
       }
     }, [selectedPlan, plans]);
     
-    // Filtrar planes según el tamaño seleccionado para móvil
     const filteredPlans = plans.filter(plan => plan.sizeValue === selectedSize);
     
-    // Tamaños disponibles - Generados dinámicamente desde los datos del plan
     const sizes = plans.map(plan => ({
       value: plan.sizeValue,
       label: plan.size

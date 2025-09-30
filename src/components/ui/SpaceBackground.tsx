@@ -23,7 +23,7 @@ export default function KingdomBackground() {
     window.addEventListener('scroll', handleScroll);
 
     // Crear partículas doradas brillantes
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 100; i++) {
       const particle = document.createElement("div");
       particle.className = "golden-particle absolute rounded-full";
 
@@ -87,44 +87,44 @@ export default function KingdomBackground() {
     });
 
     // Crear elementos del reino con temática específica
-    const kingdomElementsData = [
-      { emoji: "👑", size: "text-2xl", weight: 3 },
-      { emoji: "🪙", size: "text-xl", weight: 4 },
-    ];
+    // const kingdomElementsData = [
+    //   { emoji: "👑", size: "text-2xl", weight: 3 },
+    //   { emoji: "🪙", size: "text-xl", weight: 4 },
+    // ];
 
-    for (let i = 0; i < 15; i++) {
-      const element = document.createElement("div");
-      element.className = "kingdom-element absolute opacity-40";
+    // for (let i = 0; i < 15; i++) {
+    //   const element = document.createElement("div");
+    //   element.className = "kingdom-element absolute opacity-40";
 
-      const random = Math.random();
-      let selectedElement = kingdomElementsData[0];
-      let weightSum = 0;
+    //   const random = Math.random();
+    //   let selectedElement = kingdomElementsData[0];
+    //   let weightSum = 0;
 
-      for (const elementData of kingdomElementsData) {
-        weightSum += elementData.weight;
-        if (random <= weightSum / 15) {
-          selectedElement = elementData;
-          break;
-        }
-      }
+    //   for (const elementData of kingdomElementsData) {
+    //     weightSum += elementData.weight;
+    //     if (random <= weightSum / 15) {
+    //       selectedElement = elementData;
+    //       break;
+    //     }
+    //   }
 
-      element.textContent = selectedElement.emoji;
-      element.classList.add(selectedElement.size);
+    //   element.textContent = selectedElement.emoji;
+    //   element.classList.add(selectedElement.size);
 
-      element.style.left = `${Math.random() * 100}%`;
-      element.style.top = `${Math.random() * 100}%`;
+    //   element.style.left = `${Math.random() * 100}%`;
+    //   element.style.top = `${Math.random() * 100}%`;
 
-      if (Math.random() > 0.5) {
-        element.style.filter = "drop-shadow(0 0 8px #fbbf24)";
-      }
+    //   if (Math.random() > 0.5) {
+    //     element.style.filter = "drop-shadow(0 0 8px #fbbf24)";
+    //   }
 
-      if (Math.random() > 0.7) {
-        element.style.filter += " drop-shadow(0 0 15px rgba(251, 191, 36, 0.6))";
-      }
+    //   if (Math.random() > 0.7) {
+    //     element.style.filter += " drop-shadow(0 0 15px rgba(251, 191, 36, 0.6))";
+    //   }
 
-      container.appendChild(element);
-      kingdomElements.push(element);
-    }
+    //   container.appendChild(element);
+    //   kingdomElements.push(element);
+    // }
 
     // Animación de elementos del reino con parallax
     kingdomElements.forEach((element, index) => {

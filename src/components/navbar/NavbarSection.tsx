@@ -20,14 +20,14 @@ export default function NavbarSection(){
     }, []);
 
     return (
-        <div role="navigation" className={`font-sans md:text-lg flex md:bg-transparent backdrop-blur pb-10 pt-10 h-16 w-full justify-between items-center px-6 md:px-28  fixed top-0 z-[90] mx-auto transition-all duration-500 ${
+        <nav role="navigation" className={`font-sans md:text-lg flex md:bg-transparent backdrop-blur h-16 sm:h-20 w-full justify-between items-center px-4 sm:px-6 md:px-12 lg:px-28 fixed top-0 z-[90] mx-auto transition-all duration-500 ${
             scrolled 
                 ? 'md:backdrop-blur-md md:bg-black/40 md:border-b md:border-white/10 md:shadow-lg md:shadow-black/20' 
                 : 'md:backdrop-blur-sm md:bg-black/20 md:border-b md:border-white/5'
         } bg-black`}>
-            <img className="w-[50%] md:w-1/6" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
+            <img className="w-32 sm:w-40 md:w-44 lg:w-48" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
 
-            <div className="hidden text-white text-md md:flex space-x-10 items-center">
+            <div className="hidden text-white text-sm lg:text-base md:flex space-x-4 lg:space-x-8 xl:space-x-10 items-center">
                 
                 {ITEMNAV.map((item:any) => (
                     <a key={item.id} className="hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href={item.href}>{item.label}</a>
@@ -46,9 +46,9 @@ export default function NavbarSection(){
                 colorClass="text-white"
             />
 
-            <div onClick={() => setOpen(false)} className={`fixed inset-x-0 top-16 bottom-0 bg-black/70 transition-opacity duration-300 z-20 md:hidden ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} />
+            <div onClick={() => setOpen(false)} className={`fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-black/70 transition-opacity duration-300 z-20 md:hidden ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} />
 
-            <div className={`fixed top-14 bottom-0 right-0 w-64 h-screen bg-black text-white z-30 transform transition-transform duration-300 md:hidden ${open ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`fixed top-16 sm:top-20 bottom-0 right-0 w-64 sm:w-72 h-screen bg-black text-white z-30 transform transition-transform duration-300 md:hidden ${open ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="p-6 flex flex-col gap-4">
                     
                     {ITEMNAV.map((item:any) => (
@@ -60,7 +60,7 @@ export default function NavbarSection(){
                 
                 </div>
             </div>
-        </div>
+        </nav>
     );
 
 }

@@ -14,28 +14,28 @@ export default function PortadaSection(){
     }, []);
 
     return(
-        <section className=" w-full md:flex md:items-center md:justify-between mt-32 md:mt-0 md:pl-28">
+        <section id="inicio" className="w-full max-w-7xl mx-auto md:flex md:items-center md:justify-between mt-24 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-12 lg:px-16 overflow-hidden">
 
-            <div className="w-full md:w-[50%] mx-auto pl-6 md:pl-0">
-                <h2 className="uppercase text-amber-400 text-md font-medium md:text-lg ">
+            <div className="w-full md:w-[50%]">
+                <h2 className="uppercase text-amber-400 text-sm sm:text-base md:text-lg font-medium">
                     Quédate con hasta el 90 % de tus ganancias.
                 </h2>
-                <div className="text-white text-3xl md:text-5xl font-bold pt-2">
+                <div className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pt-2">
                     <p>Fondea tu trading</p>
                     <p>
                         <span className="text-amber-400 font-semibold">multiplica</span> tus resultados.
                     </p>
                 </div>
 
-                <p className="text-white text-md md:text-xl my-6 w-3/4">
+                <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl my-4 sm:my-6 max-w-md">
                     Pagos rápidos y sin complicaciones.
                 </p>
 
-                <ButtonNav className="w-[50%] md:w-[30%] py-1 hover:scale-105 hover:ease-in-out hover:transition-all hover:duration-500 mx-auto" href="https://users.lordfound.com/register">Fondeate Ahora</ButtonNav>
+                <ButtonNav className="w-auto px-6 sm:px-8 py-2 hover:scale-105 hover:ease-in-out hover:transition-all hover:duration-500" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
             </div>
 
-            <div className="w-full md:w-[50%] mb-4 flex justify-center items-center md:mr-32 mr-12">
-                <img className={`h-[27rem] scale-x-110 md:scale-x-100 w-screen md:h-[35rem]  transform transition-all duration-1000 ${rotate ? "rotate-[4deg]" : "-rotate-[4deg]"}`} src="./icono-destellos.png" alt="" />
+            <div className="w-full md:w-[50%] mt-8 md:mt-0 mb-4 flex justify-center items-center">
+                <img className={`h-64 sm:h-80 md:h-96 lg:h-[28rem] w-auto object-contain transform transition-all duration-1000 ${rotate ? "rotate-[4deg]" : "-rotate-[4deg]"}`} src="./icono-destellos.png" alt="Lord Found" />
             </div>
 
         </section>

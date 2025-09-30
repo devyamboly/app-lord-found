@@ -29,9 +29,9 @@ export default function StepsSection(){
 
     return(
 
-        <section className="pl-8 text-3xl md:text-6xl font-bold text-center">
-            <h2 className="text-slate-100 mb-14">Evalúa. Fondea. <span className="text-amber-400">Gana.</span></h2>
-            <div className="md:flex md:justify-center space-y-14 md:space-y-0 md:space-x-8 mt-6 mx-auto w-full pr-8 md:pr-0 ">
+        <section className="px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-center py-8 sm:py-12">
+            <h2 className="text-slate-100 mb-8 sm:mb-10 md:mb-14">Evalúa. Fondea. <span className="text-amber-400">Gana.</span></h2>
+            <div className="md:flex md:justify-center space-y-8 sm:space-y-10 md:space-y-0 md:space-x-6 lg:space-x-8 mt-6 mx-auto w-full">
                 {
                     steps.map((step,index) =>(
                         <CardStep key={index} {...step} />

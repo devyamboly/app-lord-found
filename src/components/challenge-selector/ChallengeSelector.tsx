@@ -19,7 +19,7 @@ export default function ChallengeSelector(){
   };
 
   return(
-    <section className="py-6 sm:py-10 px-4">
+    <section id='planes' className="py-6 sm:py-10 px-4">
       <h2 className="text-white text-2xl sm:text-3xl md:text-4xl text-center font-bold mb-6 sm:mb-8">
         ELIGE EL MEJOR <span className="text-amber-500 font-bold">PLAN</span>
       </h2>
@@ -35,18 +35,16 @@ export default function ChallengeSelector(){
             }}
           >
             <div className="relative overflow-hidden flex items-center justify-center min-h-[2rem] sm:min-h-[2.5rem]">
-              {/* Letra inicial */}
+
               <h3 className={`font-extrabold text-xl sm:text-2xl md:text-3xl transition-all duration-500 ${expandedLetter === letter ? 'opacity-0 absolute scale-0' : 'opacity-100 scale-100'}`}>
                 {letter}
               </h3>
-              
-              {/* Palabra completa */}
+
               <h3 className={`font-extrabold text-base sm:text-lg md:text-xl lg:text-2xl whitespace-nowrap transition-all duration-500 ${expandedLetter === letter ? 'opacity-100 scale-100 translate-x-0':'opacity-0 scale-50 absolute translate-x-4'}`}>
                 {word}
               </h3>
             </div>
 
-            {/* Efecto de brillo al expandir */}
             {expandedLetter === letter && (
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 via-white/30 to-white/20 animate-pulse" />
             )}
@@ -54,7 +52,6 @@ export default function ChallengeSelector(){
         ))}
       </div>
 
-      {/* Pricing Table */}
       {expandedLetter && (
         <div className="mt-10 sm:mt-16 px-2 sm:px-4 animate-fade-in">
           <PricingTable selectedPlan={expandedLetter} />
