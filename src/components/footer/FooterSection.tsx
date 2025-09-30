@@ -46,7 +46,7 @@ export default function FooterSection(){
                                 <h3 className="text-slate-200 uppercase tracking-wide text-sm md:text-sm font-semibold">Links importantes</h3>
                                 <ul className="text-slate-300 text-sm sm:text-base space-y-2 mt-3 sm:mt-4">
                                     <li>
-                                        <a className=" hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href="#">Panel de comerciantes</a>
+                                        <a className=" hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href="#">Inicio</a>
                                     </li>
                                     <li>
                                         <a className=" hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href="#beneficios">Beneficios</a>

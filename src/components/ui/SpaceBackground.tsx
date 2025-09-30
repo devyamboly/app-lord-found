@@ -92,7 +92,7 @@ export default function KingdomBackground() {
       { emoji: "🪙", size: "text-xl", weight: 4 },
     ];
 
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 15; i++) {
       const element = document.createElement("div");
       element.className = "kingdom-element absolute opacity-40";
 
