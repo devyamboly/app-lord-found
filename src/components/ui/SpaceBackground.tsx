@@ -90,8 +90,6 @@ export default function KingdomBackground() {
     const kingdomElementsData = [
       { emoji: "👑", size: "text-2xl", weight: 3 },
       { emoji: "🪙", size: "text-xl", weight: 4 },
-      { emoji: "💰", size: "text-xl", weight: 3 },
-      { emoji: "💎", size: "text-lg", weight: 2 },
       { emoji: "🏆", size: "text-lg", weight: 2 },
       { emoji: "⚔️", size: "text-lg", weight: 1 },
       { emoji: "🛡️", size: "text-lg", weight: 1 },
@@ -102,13 +100,12 @@ export default function KingdomBackground() {
       const element = document.createElement("div");
       element.className = "kingdom-element absolute opacity-40";
 
-      const random = Math.random();
+      const totalWeight = kingdomElementsData.reduce((sum, item) => sum + item.weight, 0);
+      let threshold = Math.random() * totalWeight;
       let selectedElement = kingdomElementsData[0];
-      let weightSum = 0;
-
       for (const elementData of kingdomElementsData) {
-        weightSum += elementData.weight;
-        if (random <= weightSum / 15) {
+        threshold -= elementData.weight;
+        if (threshold <= 0) {
           selectedElement = elementData;
           break;
         }
