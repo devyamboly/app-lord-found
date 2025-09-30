@@ -4,6 +4,8 @@ import { useState } from 'react';
 import PricingTable from './PricingTable';
 import PlanSelectionHint from './PlanSelectionHint';
 import PlanPhaseInfo from './PlanPhaseInfo';
+import PlanNumPhase from './PlanNumPhase';
+import PlanPhaseInformation from './PlanPhaseInformation';
 
 
 export default function ChallengeSelector(){
@@ -63,13 +65,15 @@ export default function ChallengeSelector(){
           ))}
         </div>
 
-        <div className="hidden w-full max-w-sm lg:block">
-          <PlanPhaseInfo selectedPlan={expandedLetter} />
+        <div className="hidden lg:block lg:w-[240px] xl:w-[260px]">
+          <PlanNumPhase selectedPlan={expandedLetter} />
         </div>
       </div>
 
-      <div className="lg:hidden mt-6">
-        <PlanPhaseInfo selectedPlan={expandedLetter} />
+      <PlanPhaseInfo selectedPlan={expandedLetter} />
+
+      <div className="hidden lg:mt-16 lg:block">
+        <PlanPhaseInformation selectedPlan={expandedLetter} />
       </div>
 
       {expandedLetter && (
