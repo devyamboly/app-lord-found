@@ -95,7 +95,7 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
     ],
     features: [
       { label: '15% Performance Reward', type: 'header' },
-      { label: 'Objetivo de beneficios de la Fase 1', key: 'profitPhase1' as any, values: ['8%', '8%', '8%', '8%', '8%'] },
+      { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['8%', '8%', '8%', '8%', '8%'] },
       { label: 'Fase 2 Objetivo de beneficios', key: 'profitPhase2' as any, values: ['5%', '5%', '5%', '5%', '5%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
@@ -161,8 +161,8 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
       }
     ],
     features: [
-      { label: '20% Performance Reward', subtitle: 'From Challenge Phase', type: 'header' },
-      { label: 'Objetivo de beneficios de la Fase 1', key: 'profitPhase1' as any, values: ['12%', '12%', '12%', '12%', '12%'] },
+      { label: '20% Performance Reward', type: 'header' },
+      { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['12%', '12%', '12%', '12%', '12%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
       { label: 'Días mínimos de negociación', values: ['3 Days', '3 Days', '3 Days', '3 Days', '3 Days'] },
@@ -232,8 +232,8 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
       }
     ],
     features: [
-      { label: '25% Performance Reward', subtitle: 'From Challenge Phase', type: 'header' },
-      { label: 'Objetivo de beneficios de la Fase 1', key: 'profitPhase1' as any, values: ['10%', '10%', '10%', '10%', '10%'] },
+      { label: '25% Performance Reward', type: 'header' },
+      { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['10%', '10%', '10%', '10%', '10%'] },
       { label: 'Fase 2 Objetivo de beneficios', key: 'profitPhase2' as any, values: ['5%', '5%', '5%', '5%', '5%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
@@ -304,8 +304,8 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
       }
     ],
     features: [
-      { label: '20% Performance Reward', subtitle: 'From Challenge Phase', type: 'header' },
-      { label: 'Objetivo de beneficios de la Fase 1', key: 'profitPhase1' as any, values: ['10%', '10%', '10%', '10%', '10%'] },
+      { label: '20% Performance Reward', type: 'header' },
+      { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['10%', '10%', '10%', '10%', '10%'] },
       { label: 'Fase 2 Objetivo de beneficios', key: 'profitPhase2' as any, values: ['6%', '6%', '6%', '6%', '6%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
