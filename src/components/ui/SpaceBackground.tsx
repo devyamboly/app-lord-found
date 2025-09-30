@@ -90,12 +90,6 @@ export default function KingdomBackground() {
     const kingdomElementsData = [
       { emoji: "👑", size: "text-2xl", weight: 3 },
       { emoji: "🪙", size: "text-xl", weight: 4 },
-      { emoji: "💰", size: "text-xl", weight: 3 },
-      { emoji: "💎", size: "text-lg", weight: 2 },
-      { emoji: "🏆", size: "text-lg", weight: 2 },
-      { emoji: "⚔️", size: "text-lg", weight: 1 },
-      { emoji: "🛡️", size: "text-lg", weight: 1 },
-      { emoji: "✨", size: "text-base", weight: 2 },
     ];
 
     for (let i = 0; i < 25; i++) {
