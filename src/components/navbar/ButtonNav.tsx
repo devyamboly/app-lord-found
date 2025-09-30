@@ -9,7 +9,7 @@ export default function ButtonNav({ href, children, className, colorClass }: But
       href={href}
       className={cn(
         "group relative inline-flex items-center justify-center select-none",
-        "px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 no-underline text-sm sm:text-base font-medium", 
+        "px-3 sm:px-4 md:px-7 py-1.5 sm:py-2 no-underline text-sm sm:text-base font-medium", 
         // base amarillo oscuro con degradado diagonal para mejor contraste con texto blanco     
         "bg-[linear-gradient(-30deg,#d97706_50%,#A85A1B_50%)] text-zinc-200",
         "border border-amber-900/10 shadow-xl/30 overflow-hidden",
