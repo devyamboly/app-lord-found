@@ -22,10 +22,6 @@ export default function CryptoCarousel(){
                 </h2>
 
                 <div className="group relative overflow-hidden py-3 sm:py-4">
-                    {/* Gradientes laterales responsivos (más finos en mobile) */}
-                    <div className="pointer-events-none absolute left-0 top-0 h-full w-6 sm:w-8 md:w-10 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/70 to-transparent z-10" />
-                    <div className="pointer-events-none absolute right-0 top-0 h-full w-6 sm:w-8 md:w-10 bg-gradient-to-l from-[#0f172a] via-[#0f172a]/70 to-transparent z-10" />
-
                     {/* Wrapper con padding lateral dinámico */}
                     <div className="w-full overflow-hidden px-4 sm:px-8 md:px-12">
                         {/* En mobile quitamos el offset para centrar mejor; desde sm añadimos leve separación */}
