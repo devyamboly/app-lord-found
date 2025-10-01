@@ -57,13 +57,13 @@ export default function PlanPhaseInfo({ selectedPlan }: PlanPhaseInfoProps) {
         <div className="h-px flex-1 bg-gradient-to-r from-amber-300/60 via-amber-400/80 to-transparent" />
       </div>
 
-      <div className="flex flex-col lg:flex-col gap-4 rounded-3xl border border-amber-400/30 bg-gradient-to-br from-slate-900/70 via-slate-900/40 to-slate-900/20 px-5 py-6 sm:px-6 sm:py-7 lg:px-7 lg:py-8 shadow-[0_25px_70px_-25px_rgba(251,191,36,0.35)] backdrop-blur-md">
+      <div className="flex flex-col lg:flex-col gap-4 rounded-3xl border border-amber-400/30 bg-gradient-to-br from-black/70 via-black/40 to-black/20 px-5 py-6 sm:px-6 sm:py-7 lg:px-7 lg:py-8 shadow-[0_25px_70px_-25px_rgba(251,191,36,0.35)] backdrop-blur-md">
         <div className="flex items-center gap-3">
           <span className="text-3xl lg:text-4xl drop-shadow-[0_0_12px_rgba(251,191,36,0.4)]">
             {plan.icon}
           </span>
           <div className="flex flex-col">
-            <span className="text-xs uppercase tracking-[0.4em] text-amber-200/70">
+            <span className="text-lg sm:text-xl lg:text-2xl uppercase tracking-[0.15em] text-yellow-400 font-extrabold">
               {plan.phases}
             </span>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white">

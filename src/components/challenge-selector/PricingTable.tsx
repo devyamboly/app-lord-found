@@ -35,7 +35,7 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
           <h3 className="text-white text-base font-bold mb-4 text-center">
             Selecciona el tamaño de <span className="text-amber-500">cuenta</span>
           </h3>
-          <div className="bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3">
+          <div className="bg-black/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3">
             <div className="flex flex-wrap justify-center gap-2">
               {sizes.map(({ value, label }) => (
                 <button
@@ -45,7 +45,7 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
                     relative px-5 py-2.5 rounded-xl font-extrabold text-lg transition-all duration-300 min-w-[70px]
                     ${selectedSize === value
                       ? 'bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white shadow-xl shadow-amber-500/50 scale-110 ring-2 ring-amber-400/50'
-                      : 'bg-slate-800/90 text-amber-400/80 border border-slate-600/50 hover:bg-slate-700 hover:text-amber-400 hover:scale-105 hover:border-amber-500/30'
+                      : 'bg-black/90 text-amber-400/80 border border-slate-600/50 hover:bg-black hover:text-amber-400 hover:scale-105 hover:border-amber-500/30'
                     }
                   `}
                 >
@@ -66,7 +66,7 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
 
         <div className="overflow-x-auto mx-auto inset-shadow-2xs shadow-amber-100 w-full lg:w-[95%]">
           {/* Tabla para móvil - Solo muestra el tamaño seleccionado */}
-          <div className="lg:hidden border-2 border-amber-500/30 rounded-2xl overflow-hidden bg-gradient-to-b from-slate-900/95 to-black/95 backdrop-blur-sm">
+          <div className="lg:hidden border-2 border-amber-500/30 rounded-2xl overflow-hidden bg-gradient-to-b from-black/95 to-black/95 backdrop-blur-sm">
             {/* Header Row Mobile */}
             <div className="grid grid-cols-2 border-b border-amber-500/30">
               <div className="col-span-1 p-4 border-r border-amber-500/30 bg-black/50 flex items-center justify-center">
@@ -143,7 +143,7 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
           </div>
 
           {/* Tabla para Desktop - Muestra todos los tamaños */}
-          <div className="hidden lg:block min-w-[900px] border-2 border-amber-500/30 rounded-2xl overflow-hidden bg-gradient-to-b from-slate-900/95 to-black/95 backdrop-blur-sm">
+          <div className="hidden lg:block min-w-[900px] border-2 border-amber-500/30 rounded-2xl overflow-hidden bg-gradient-to-b from-black/95 to-black/95 backdrop-blur-sm">
             {/* Header Row Desktop */}
             <div className="grid grid-cols-6 border-b border-amber-500/30">
             <div className="col-span-1 p-4 sm:p-6 border-r border-amber-500/30 bg-black/50 flex items-center justify-center">
