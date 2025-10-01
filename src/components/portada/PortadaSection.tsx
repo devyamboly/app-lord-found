@@ -23,12 +23,12 @@ export default function PortadaSection(){
                 <div className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pt-2">
                     <p>Fondea tu trading</p>
                     <p>
-                        <span className="text-amber-400 font-semibold">multiplica</span> tus resultados.
+                        <span className="text-amber-400 font-semibold">multiplica</span> tus resultados
                     </p>
                 </div>
 
                 <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl my-4 sm:my-6 max-w-md">
-                    Pagos rápidos y sin complicaciones.
+                    Pagos rápidos y sin complicaciones
                 </p>
 
                 <ButtonNav className="w-[100%] md:w-auto text-lg mx-auto md:mx-0 px-20 sm:px-8 md:px-24 py-[5px] hover:scale-105 hover:ease-in-out hover:transition-all hover:duration-500" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>

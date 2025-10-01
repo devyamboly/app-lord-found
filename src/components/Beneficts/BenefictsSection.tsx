@@ -12,15 +12,15 @@ export default function BenefitsSection() {
             <h2 className="text-4xl lg:text-5xl font-bold text-white">
               Beneficios
               <br className="hidden md:block"/>
-              <span className="text-amber-500"> Clave.</span>
+              <span className="text-amber-500"> Clave</span>
             </h2>
             <div className="space-y-4 text-zinc-300">
               <p>
                 En Lord Found no buscamos traders perfectos, buscamos traders
-                consistentes.
+                consistentes
               </p>
               <p>
-                Creemos en tu potencial y te damos las herramientas para crecer.
+                Creemos en tu potencial y te damos las herramientas para crecer
               </p>
             </div>
           </div>

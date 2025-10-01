@@ -21,7 +21,7 @@ export default function CommunitySection() {
             Opere con inteligencia y gane
           </h2>
           <p className="text-zinc-300">
-            Únase hoy mismo a LordFound y viva una comunidad de trading como ninguna otra.
+            Únase hoy mismo a LordFound y viva una comunidad de trading como ninguna otra
           </p>
         </div>
 
