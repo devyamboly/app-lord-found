@@ -11,7 +11,6 @@ const PLAN_DETAILS = {
     phases: "2 fases",
     story: "Construye tu camino paso a paso. Legacy convierte tu progreso en un legado.",
     focus: "Traders que buscan estructura y recorrido.",
-    cta: "Construye tu Legacy hoy.",
     icon: "📖",
   },
   O: {
@@ -19,7 +18,6 @@ const PLAN_DETAILS = {
     phases: "1 fase",
     story: "Cuando un solo paso basta. ONE es rapidez, simplicidad y acceso directo al fondeo.",
     focus: "Traders que quieren inmediatez.",
-    cta: "Hazlo en One.",
     icon: "⚡",
   },
   R: {
@@ -27,7 +25,6 @@ const PLAN_DETAILS = {
     phases: "Fondeo inmediato",
     story: "El acceso reservado para los privilegiados. Royal Direct es fondeo inmediato, sin fases.",
     focus: "Traders que quieren empezar ya.",
-    cta: "Accede directo con Royal.",
     icon: "👑",
   },
   D: {
@@ -35,7 +32,6 @@ const PLAN_DETAILS = {
     phases: "Edición especial",
     story: "Exclusividad en movimiento. Dynamic es edición especial, limitada y distinta.",
     focus: "Traders que buscan experiencias únicas.",
-    cta: "Vive la experiencia Dynamic.",
     icon: "🔥",
   },
 } as const;
@@ -83,11 +79,6 @@ export default function PlanPhaseInfo({ selectedPlan }: PlanPhaseInfoProps) {
         <div className="rounded-2xl border border-amber-500/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-100/90 shadow-inner shadow-amber-500/10">
           <span className="font-medium">Enfoque:</span> {plan.focus}
         </div>
-
-        <button className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-orange-500 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-slate-900 shadow-[0_15px_30px_-10px_rgba(251,191,36,0.65)] transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/80">
-          <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white/10 transition-opacity duration-300" />
-          <span className="relative">{plan.cta}</span>
-        </button>
       </div>
 
       <div className="lg:hidden flex flex-col gap-2 rounded-2xl border border-amber-400/20 bg-slate-900/40 px-5 py-4 backdrop-blur">
