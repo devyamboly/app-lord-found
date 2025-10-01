@@ -17,10 +17,10 @@ export default function PortadaSection(){
         <section id="inicio" className="w-full max-w-7xl mx-auto md:flex md:items-center md:justify-between mt-24 sm:mt-32 md:mt-20 px-4 sm:px-6 md:px-12 lg:px-4 pt-20 overflow-hidden">
 
             <div className="w-full md:w-[50%]">
-                <h2 className="uppercase text-amber-400 text-sm sm:text-base md:text-lg font-medium">
+                <h2 className="hidden md:block uppercase text-amber-400 text-sm sm:text-base md:text-lg font-medium">
                     Quédate con hasta el 90 % de tus ganancias.
                 </h2>
-                <div className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pt-2">
+                <div className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pt-2">
                     <p>Fondea tu trading</p>
                     <p>
                         <span className="text-amber-400 font-semibold">multiplica</span> tus resultados.
@@ -31,7 +31,7 @@ export default function PortadaSection(){
                     Pagos rápidos y sin complicaciones.
                 </p>
 
-                <ButtonNav className="w-auto mx-auto md:mx-0 px-20 sm:px-8 md:px-24 py-2 hover:scale-105 hover:ease-in-out hover:transition-all hover:duration-500" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
+                <ButtonNav className="w-[100%] md:w-auto text-lg mx-auto md:mx-0 px-20 sm:px-8 md:px-24 py-[5px] hover:scale-105 hover:ease-in-out hover:transition-all hover:duration-500" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
             </div>
 
             <div className="w-full md:w-[50%] mt-8 md:mt-0 mb-4 md:flex justify-end items-center">
