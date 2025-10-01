@@ -1,16 +1,14 @@
 "use client";
 import React from "react";
-import Carousel from "@/components/common/Carousel";
-import TestimonialCard from "@/components/testimonials/TestimonialCard";
-import { TESTIMONIALS } from "@/mocks/testimonials";
+import TestimonialCarousel from "@/components/testimonials/TestimonialCarousel";
 
 export default function TestimonialsSection() {
   return (
     <section id="testimonios" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto">
@@ -34,35 +32,8 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Lista apilada en mobile */}
-        <div className="sm:hidden">
-          <div className="grid grid-cols-1 gap-6">
-            {TESTIMONIALS.map((t, idx) => (
-              <TestimonialCard key={idx} name={t.name} payout={t.payout} quote={t.quote} imageSrc={(t as any).imageSrc} />
-            ))}
-          </div>
-        </div>
-
-        {/* Carrusel en sm y mayores */}
-        <div className="hidden sm:block">
-          <Carousel
-            slidesToShow={3}
-            slidesToScroll={1}
-            infinite={true}
-            autoplay={true}
-            autoplaySpeed={5000}
-            dots={true}
-            customArrows={true}
-            responsive={[
-              { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-              { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-            ]}
-          >
-            {TESTIMONIALS.map((t, idx) => (
-              <TestimonialCard key={idx} name={t.name} payout={t.payout} quote={t.quote} imageSrc={(t as any).imageSrc} />
-            ))}
-          </Carousel>
-        </div>
+        {/* Carousel personalizado con efecto de centro destacado */}
+        <TestimonialCarousel />
 
         {/* Stats or trust indicators */}
         <div className="mt-16 pt-12 border-t border-amber-500/20">

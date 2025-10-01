@@ -200,3 +200,45 @@
 }
 
 .animate-ping-slow { animation: ping-slow 2.8s cubic-bezier(0,0,0.2,1) infinite; }
+
+/* Estilos para el carousel de testimonios */
+.testimonial-carousel .slick-list {
+  overflow: hidden !important;
+}
+
+.testimonial-carousel-mobile .slick-list {
+  overflow: hidden !important;
+}
+
+/* Smooth transitions para todos los elementos del carousel */
+.testimonial-carousel .slick-track,
+.testimonial-carousel-mobile .slick-track {
+  display: flex !important;
+  align-items: stretch;
+}
+
+/* Asegurar que las slides tengan la misma altura */
+.testimonial-carousel .slick-slide,
+.testimonial-carousel-mobile .slick-slide {
+  height: inherit !important;
+}
+
+.testimonial-carousel .slick-slide > div,
+.testimonial-carousel-mobile .slick-slide > div {
+  height: 100%;
+}
+
+/* Animación suave para los dots */
+.slick-dots li {
+  transition: all 0.3s ease;
+}
+
+.slick-dots li div {
+  transition: all 0.3s ease;
+}
+
+/* Mejorar la apariencia en hover de los dots */
+.slick-dots li:hover div {
+  background: rgb(251 191 36 / 0.8) !important;
+  transform: scale(1.2);
+}
