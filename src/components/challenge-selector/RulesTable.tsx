@@ -24,8 +24,6 @@ export function RulesTable({
 
   const maxColumns = 4;
   const currentColumns = headers.length;
-  // IVÁN PINGA
-  //-- hecho con el autocompletado de github copilot
 
   return (
     <div className="rounded-xl border border-zinc-700/70">
