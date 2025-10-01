@@ -80,13 +80,6 @@ export default function PlanPhaseInfo({ selectedPlan }: PlanPhaseInfoProps) {
           <span className="font-medium">Enfoque:</span> {plan.focus}
         </div>
       </div>
-
-      <div className="lg:hidden flex flex-col gap-2 rounded-2xl border border-amber-400/20 bg-slate-900/40 px-5 py-4 backdrop-blur">
-        <div className="flex items-start gap-3">
-          <span className="text-base font-semibold text-amber-300/90">Fases:</span>
-          <span className="text-sm text-slate-100/80 leading-relaxed">{plan.phases}</span>
-        </div>
-      </div>
     </div>
   );
 }
