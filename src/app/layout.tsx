@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-hidden`} cz-shortcut-listen="true"
       >
         <KingdomBackground />
         <div className="relative z-[1] flex min-h-screen flex-col">
