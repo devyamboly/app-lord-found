@@ -14,7 +14,7 @@ export default function PortadaSection(){
     }, []);
 
     return(
-        <section id="inicio" className="w-full max-w-7xl mx-auto md:flex md:items-center md:justify-between mt-24 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-12 lg:px-16 pt-20 overflow-hidden">
+        <section id="inicio" className="w-full max-w-7xl mx-auto md:flex md:items-center md:justify-between mt-24 sm:mt-32 md:mt-20 px-4 sm:px-6 md:px-12 lg:px-4 pt-20 overflow-hidden">
 
             <div className="w-full md:w-[50%]">
                 <h2 className="uppercase text-amber-400 text-sm sm:text-base md:text-lg font-medium">
@@ -34,8 +34,8 @@ export default function PortadaSection(){
                 <ButtonNav className="w-auto mx-auto md:mx-0 px-20 sm:px-8 md:px-14 py-2 hover:scale-105 hover:ease-in-out hover:transition-all hover:duration-500" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
             </div>
 
-            <div className="w-full md:w-[50%] mt-8 md:mt-0 mb-4 md:flex justify-center items-center">
-                <img className={`brightness-75 h-64 sm:h-80 md:h-96 lg:h-[30rem] w-auto object-contain mx-auto md:mx-0 transform transition-all duration-1000 ${rotate ? "rotate-[4deg]" : "-rotate-[4deg]"}`} src="./icono-destellos.png" alt="Lord Found" />
+            <div className="w-full md:w-[50%] mt-8 md:mt-0 mb-4 md:flex justify-end items-center">
+                <img className={`brightness-[80%] scale-[1.45] sm:scale-100 h-64 sm:h-80 md:h-96 lg:h-[30rem] w-auto object-contain mx-auto md:mx-0 transform transition-all duration-1000 ${rotate ? "rotate-[4deg]" : "-rotate-[4deg]"}`} src="./icono-destellos.png" alt="Lord Found" />
             </div>
 
         </section>
