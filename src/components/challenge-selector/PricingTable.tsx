@@ -69,8 +69,8 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
           <div className="lg:hidden border-2 border-amber-500/30 rounded-2xl overflow-hidden bg-gradient-to-b from-slate-900/95 to-black/95 backdrop-blur-sm">
             {/* Header Row Mobile */}
             <div className="grid grid-cols-2 border-b border-amber-500/30">
-              <div className="col-span-1 p-4 border-r border-amber-500/30 bg-black/50">
-                <h3 className="text-white text-base font-bold">Características</h3>
+              <div className="col-span-1 p-4 border-r border-amber-500/30 bg-black/50 flex items-center justify-center">
+                <h3 className="text-white text-base my-auto font-bold">Características</h3>
               </div>
               {filteredPlans.map((plan) => (
                 <div key={plan.sizeValue} className="p-4 flex flex-col items-center justify-center bg-black/30">
@@ -146,8 +146,8 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
           <div className="hidden lg:block min-w-[900px] border-2 border-amber-500/30 rounded-2xl overflow-hidden bg-gradient-to-b from-slate-900/95 to-black/95 backdrop-blur-sm">
             {/* Header Row Desktop */}
             <div className="grid grid-cols-6 border-b border-amber-500/30">
-            <div className="col-span-1 p-4 sm:p-6 border-r border-amber-500/30 bg-black/50">
-              <h3 className="text-white text-base sm:text-lg font-bold">Tamaño de la cuenta</h3>
+            <div className="col-span-1 p-4 sm:p-6 border-r border-amber-500/30 bg-black/50 flex items-center justify-center">
+              <h3 className="text-white text-base text-center sm:text-lg font-bold">Tamaño de la cuenta</h3>
             </div>
             {plans.map((plan, idx) => (
               <div key={idx} className="p-3 sm:p-4 flex flex-col items-center justify-center border-r last:border-r-0 border-amber-500/30 bg-black/30">

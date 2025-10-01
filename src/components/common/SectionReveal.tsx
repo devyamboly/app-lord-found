@@ -8,13 +8,15 @@ interface SectionRevealProps {
   className?: string;
   threshold?: number;
   rootMargin?: string;
+  mobileRootMargin?: string;
 }
 
 export default function SectionReveal({
   children,
   className,
-  threshold = 0.2,
-  rootMargin = "0px 0px -10% 0px",
+  threshold = 0.05,
+  rootMargin = "0px 0px -2% 0px",
+  mobileRootMargin = "0px 0px 5% 0px",
 }: SectionRevealProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -43,6 +45,9 @@ export default function SectionReveal({
     const node = containerRef.current;
     if (!node) return;
 
+    const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
+    const computedRootMargin = isMobileViewport ? mobileRootMargin : rootMargin;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -51,7 +56,7 @@ export default function SectionReveal({
       },
       {
         threshold,
-        rootMargin,
+        rootMargin: computedRootMargin,
       }
     );
 
