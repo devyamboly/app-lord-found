@@ -25,7 +25,17 @@ export default function NavbarSection(){
                 ? 'md:backdrop-blur-md md:bg-black/40 md:border-b md:border-white/10 md:shadow-lg md:shadow-black/20' 
                 : ' md:bg-black/20 md:border-b-0 md:border-white/5'
         } bg-black`}>
-            <img className="w-50 sm:w-40 md:w-44 lg:w-48" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
+            <img className="w-45 sm:w-40 md:w-44 lg:w-48" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
+
+            <div className="flex md:hidden gap-3 items-center">
+                <ButtonNav className="text-sm px-4 py-1.5" href="https://users.lordfound.com/register">Empezar</ButtonNav>
+                <ButtonMovil 
+                    size="md" 
+                    isOpen={open} 
+                    onToggle={() => setOpen(prev => !prev)} 
+                    colorClass="text-white"
+                />
+            </div>
 
             <div className="hidden text-white text-sm lg:text-base md:flex space-x-4 lg:space-x-8 xl:space-x-10 items-center">
                 
@@ -37,14 +47,6 @@ export default function NavbarSection(){
 
                 <ButtonNav className="hover:scale-105 transition-transform duration-300" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
             </div>
-
-            <ButtonMovil 
-                size="md" 
-                isOpen={open} 
-                onToggle={() => setOpen(prev => !prev)} 
-                className="md:hidden" 
-                colorClass="text-white"
-            />
 
             <div onClick={() => setOpen(false)} className={`fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-black/70 transition-opacity duration-300 z-20 md:hidden ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} />
 
