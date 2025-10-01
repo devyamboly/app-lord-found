@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// @ts-ignore
 import "./globals.css";
 import NavbarSection from "@/components/navbar/NavbarSection";
 import FooterSection from "@/components/footer/FooterSection";
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-hidden`} cz-shortcut-listen="true"
       >
         <KingdomBackground />
         <div className="relative z-[1] flex min-h-screen flex-col">
