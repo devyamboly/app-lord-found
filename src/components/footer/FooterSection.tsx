@@ -11,10 +11,10 @@ export default function FooterSection(){
             <div className="max-w-7xl mx-auto border-t border-l border-r rounded-t-3xl sm:rounded-t-4xl border-gray-700 pb-10 sm:pb-12">
                 <div className="pt-10  sm:pt-12 px-6 sm:px-8 md:px-10 border-b border-gray-700 pb-10 sm:pb-12">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start w-full space-y-8 md:space-y-0 md:space-x-8">
-                        <div className="flex flex-col md:block justify-center md:justify-start items-center md:items-start pb-4 w-full md:w-[40%]">
-                            <img className="w-40 sm:w-48 md:w-52 lg:w-56 mx-auto md:mx-0" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
+                        <div className="flex flex-col md:block justify-center md:justify-cente items-center md:items-start pb-4 md:pr-6 w-full md:w-[40%]">
+                            <img className="w-40 sm:w-48 md:w-52 lg:w-56 mx-auto" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
                             <div>
-                                <div className="pt-4 space-x-4 sm:space-x-6 flex items-center justify-center md:justify-start">
+                                <div className="pt-4 space-x-4 sm:space-x-6 flex items-center justify-center">
                                     <a target="_blank" rel="noopener noreferrer" aria-label="Instagram de LordFound" href="https://www.instagram.com/lordfound.fx">
                                         <Instagram className="text-white size-6 sm:size-7 hover:text-red-500" />
                                     </a>
@@ -25,7 +25,7 @@ export default function FooterSection(){
                                         <FaTiktok className="text-white text-base sm:text-xl " />
                                     </a>
                                 </div>
-                                <p className="text-gray-200 text-xs text-center md:text-left pt-4 hidden md:block">© {year} LordFound. Todos los derechos reservados.</p>
+                                <p className="text-gray-200 text-xs text-center  pt-4 hidden md:block">© {year} LordFound. Todos los derechos reservados.</p>
                             </div>
                         </div>
 
