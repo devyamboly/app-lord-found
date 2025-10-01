@@ -26,7 +26,7 @@ export default function ChallengeSelector(){
         ELIGE EL MEJOR <span className="text-amber-500 font-bold">PLAN</span>
       </h2>
       
-      <div className="mx-auto flex w-full max-w-[95%] flex-col gap-6 lg:max-w-6xl lg:flex-row lg:items-center lg:justify-between">
+      <div className="mx-auto flex w-full max-w-[95%] flex-col gap-6 lg:max-w-[74.5rem] lg:flex-row lg:items-center lg:justify-between">
         <PlanSelectionHint />
 
         <div className="mx-auto text-center font-bold flex flex-wrap justify-center items-center gap-3 sm:gap-4  px-4 sm:px-6 md:px-8 py-4 sm:py-6 border-2 rounded-[2rem] sm:rounded-[3rem] md:rounded-[4rem] border-slate-600/50 backdrop-blur-sm bg-slate-900/20 w-fit max-w-full">
