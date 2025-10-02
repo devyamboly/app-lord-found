@@ -16,7 +16,7 @@ export default function PortadaSection(){
     return(
         <section id="inicio" className="w-full max-w-7xl mx-auto md:flex md:items-center md:justify-between mt-24 sm:mt-32 md:mt-20 px-4 sm:px-6 md:px-12 lg:px-4 pt-20 overflow-hidden">
 
-            <div className="w-full md:w-[50%]">
+            <div className="w-full md:w-[50%] md:pl-4">
                 <h2 className="hidden md:block uppercase text-amber-400 text-sm sm:text-base md:text-lg font-medium">
                     Quédate con hasta el 90 % de tus ganancias.
                 </h2>

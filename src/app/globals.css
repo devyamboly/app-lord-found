@@ -186,6 +186,44 @@
   100% { transform: translateY(100%); }
 }
 
+/* Animación de brillo para el botón */
+@keyframes shine-fast {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+.animate-shine-fast {
+  animation: shine-fast 1.5s ease-in-out;
+}
+
+/* Animación de glow pulsante */
+@keyframes glow-pulse {
+  0%, 100% { 
+    filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.25));
+  }
+  50% { 
+    filter: drop-shadow(0 0 12px rgba(251, 190, 36, 0.733));
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Animación de parpadeo suave para el botón de CardStep */
+@keyframes button-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(248, 213, 85, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(248, 213, 85, 0.5));
+  }
+}
+
+.animate-button-glow {
+  animation: button-glow 2.5s ease-in-out infinite;
+}
+
 /* Shine para el botón de la tarjeta de pasos */
 @keyframes shine {
   0% { transform: translateX(-100%); }
