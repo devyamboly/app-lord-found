@@ -17,10 +17,10 @@ function getInitials(name: string) {
 
 export default function TestimonialCard({ name, payout, quote, imageSrc }: TestimonialCardProps) {
   return (
-    <div className="px-2 sm:px-3 py-2">
-      <div className="group relative h-full">
+    <div className="px-2 sm:px-3 py-2 h-full">
+      <div className="group relative h-full min-h-[420px] sm:min-h-[460px]">
         {/* Card */}
-        <Card className="relative h-full bg-zinc-900/60 backdrop-blur-lg border border-amber-500/20 rounded-3xl overflow-hidden transition-all duration-300 group-hover:border-amber-200/40 group-hover:shadow-2xl group-hover:shadow-amber-500/20 group-hover:-translate-y-1">
+        <Card className="relative h-full bg-zinc-900/70 backdrop-blur-lg border border-amber-500/20 rounded-3xl overflow-hidden transition-all duration-500 group-hover:border-amber-400/60 group-hover:shadow-2xl group-hover:shadow-amber-500/30 group-hover:bg-zinc-900/80 group-hover:scale-[1.02]">
           {/* Glow effect on hover */}
           <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-amber-500/20 blur-3xl transition-opacity duration-300 group-hover:opacity-70" aria-hidden></div>
           

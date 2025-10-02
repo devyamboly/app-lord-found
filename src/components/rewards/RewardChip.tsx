@@ -14,7 +14,7 @@ export default function RewardChip({ amount, className }: { amount: number; clas
         <DollarSign className="w-5 h-5 text-amber-400" />
       </div>
       <div className="flex items-baseline gap-2">
-        <span className="text-amber-300 font-semibold tracking-wider">REWARD</span>
+        <span className="text-amber-300 font-semibold tracking-wider">PREMIO</span>
         <span className="text-white font-bold">{currency(amount)}</span>
       </div>
     </div>

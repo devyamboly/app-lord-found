@@ -94,7 +94,7 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
       }
     ],
     features: [
-      { label: '15% Performance Reward', type: 'header' },
+      { label: '15% Recompensa por rendimiento', type: 'header' },
       { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['8%', '8%', '8%', '8%', '8%'] },
       { label: 'Fase 2 Objetivo de beneficios', key: 'profitPhase2' as any, values: ['5%', '5%', '5%', '5%', '5%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
@@ -161,7 +161,7 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
       }
     ],
     features: [
-      { label: '20% Performance Reward', type: 'header' },
+      { label: '20% Recompensa por rendimiento', type: 'header' },
       { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['12%', '12%', '12%', '12%', '12%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
@@ -232,7 +232,7 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
       }
     ],
     features: [
-      { label: '25% Performance Reward', type: 'header' },
+      { label: '25% Recompensa por rendimiento', type: 'header' },
       { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['10%', '10%', '10%', '10%', '10%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },
@@ -303,7 +303,7 @@ export const PRODUCTS: Record<PlanType, ProductPlan> = {
       }
     ],
     features: [
-      { label: '20% Performance Reward', type: 'header' },
+      { label: '20% Recompensa por rendimiento', type: 'header' },
       { label: 'Fase 1 Objetivo de beneficios', key: 'profitPhase1' as any, values: ['10%', '10%', '10%', '10%', '10%'] },
       { label: 'Límite máximo de pérdidas', key: 'maxLoss' },
       { label: 'Límite de pérdidas diarias', key: 'dailyLoss' },

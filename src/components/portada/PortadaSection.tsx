@@ -35,7 +35,7 @@ export default function PortadaSection(){
             </div>
 
             <div className="w-full md:w-[50%] mt-8 md:mt-0 mb-4 md:flex justify-end items-center">
-                <img className={`brightness-[80%] scale-[1.45] sm:scale-100 h-64 sm:h-80 md:h-96 lg:h-[30rem] w-auto object-contain mx-auto md:mx-0 transform transition-all duration-1000 ${rotate ? "rotate-[4deg]" : "-rotate-[4deg]"}`} src="./icono-destellos.png" alt="Lord Found" />
+                <img className={`brightness-[88%] scale-[1.45] sm:scale-100 h-64 sm:h-80 md:h-96 lg:h-[30rem] w-auto object-contain mx-auto md:mx-0 transform transition-all duration-1000 ${rotate ? "rotate-[4deg]" : "-rotate-[4deg]"}`} src="./icono-destellos.png" alt="Lord Found" />
             </div>
 
         </section>

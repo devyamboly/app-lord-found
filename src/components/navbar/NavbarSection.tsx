@@ -28,7 +28,7 @@ export default function NavbarSection(){
             <img className="w-45 sm:w-40 md:w-44 lg:w-48" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
 
             <div className="flex md:hidden gap-3 items-center">
-                <ButtonNav className="text-sm px-4 py-1.5" href="https://users.lordfound.com/register">Empezar</ButtonNav>
+                <ButtonNav className="text-sm px-4 py-1.5" href="https://users.lordfound.com/login">Empezar</ButtonNav>
                 <ButtonMovil 
                     size="md" 
                     isOpen={open} 
@@ -43,9 +43,9 @@ export default function NavbarSection(){
                     <a key={item.id} className="hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href={item.href}>{item.label}</a>
                 ))}
 
-                <ButtonLogin className="text-white" href="https://users.lordfound.com/register">Login</ButtonLogin>
+                <ButtonLogin className="text-white" href="https://users.lordfound.com/login">Login</ButtonLogin>
 
-                <ButtonNav className="hover:scale-105 transition-transform duration-300" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
+                <ButtonNav className="hover:scale-105 transition-transform duration-300" href="https://users.lordfound.com/dashboard">Fondéate Ahora</ButtonNav>
             </div>
 
             <div onClick={() => setOpen(false)} className={`fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-black/70 transition-opacity duration-300 z-20 md:hidden ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} />
@@ -57,9 +57,9 @@ export default function NavbarSection(){
                         <a key={item.id} onClick={() => setOpen(false)} className="hover:text-amber-500 hover:border-b hover:border-amber-500 transition ease-in-out duration-300" href={item.href}>{item.label}</a>
                     ))}
 
-                    <ButtonLogin className="text-white " href="https://users.lordfound.com/register">Login</ButtonLogin>
-                    <ButtonNav className="mt-2 font-semibold" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
-                
+                    <ButtonLogin className="text-white " href="https://users.lordfound.com/login">Login</ButtonLogin>
+                    <ButtonNav className="mt-2 font-semibold" href="https://users.lordfound.com/dashboard">Fondéate Ahora</ButtonNav>
+
                 </div>
             </div>
         </nav>

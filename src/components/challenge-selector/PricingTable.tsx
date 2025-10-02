@@ -2,6 +2,7 @@
 
 'use client';
 import { PRODUCTS, PlanType, AccountSize } from '@/mocks/products';
+import { Link } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function PricingTable({ selectedPlan }: { selectedPlan: string }) {
@@ -73,13 +74,15 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
                 <h3 className="text-white text-base my-auto font-bold">Características</h3>
               </div>
               {filteredPlans.map((plan) => (
-                <div key={plan.sizeValue} className="p-4 flex flex-col items-center justify-center bg-black/30">
+                <div key={plan.sizeValue} className="py-4 px-2 flex flex-col items-center justify-center bg-black/30">
                   <h2 className="text-white text-3xl font-extrabold mb-2" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.size}</h2>
-                  <button className="w-full px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 text-sm">
-                    Get Plan
-                  </button>
+                  <a href="https://users.lordfound.com/dashboard" className='w-full'>
+                    <button className="w-full px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 text-sm">
+                      Obtener
+                    </button>
+                  </a>
                   <p className="text-white/70 text-xs mt-2">
-                    Fee: <span className="text-amber-400 font-semibold" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.fee}</span>
+                    Precio: <span className="text-amber-400 font-semibold" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.fee}</span>
                   </p>
                 </div>
               ))}
@@ -152,11 +155,13 @@ export default function PricingTable({ selectedPlan }: { selectedPlan: string })
             {plans.map((plan, idx) => (
               <div key={idx} className="p-3 sm:p-4 flex flex-col items-center justify-center border-r last:border-r-0 border-amber-500/30 bg-black/30">
                 <h2 className="text-white text-2xl sm:text-3xl font-extrabold mb-2" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.size}</h2>
-                <button className="w-full px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 text-sm sm:text-base">
-                  Get Plan
-                </button>
+                <a href="https://users.lordfound.com/dashboard" className='w-full'>
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 text-sm sm:text-base">
+                    Obtener
+                  </button>
+                </a>
                 <p className="text-white/70 text-xs sm:text-sm mt-2">
-                  Fee: <span className="text-amber-400 font-semibold" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.fee}</span>
+                  Precio: <span className="text-amber-400 font-semibold" style={{ fontFamily: '"Times New Roman", serif' }}>{plan.fee}</span>
                 </p>
               </div>
             ))}
