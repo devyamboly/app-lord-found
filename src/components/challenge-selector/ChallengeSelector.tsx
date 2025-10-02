@@ -49,7 +49,7 @@ export default function ChallengeSelector(){
                 </h3>
 
                 <h3
-                  className={`font-extrabold text-[clamp(1.75rem,7vw,2.25rem)] sm:text-3xl md:text-xl lg:text-2xl whitespace-nowrap leading-none text-yellow-100 transition-all duration-500 tracking-wide sm:tracking-widest ${expandedLetter === letter ? 'block md:block' : 'block md:hidden'} flex items-baseline gap-1`}
+                  className={`font-extrabold text-[clamp(1.75rem,7vw,2.25rem)] sm:text-3xl md:text-xl lg:text-2xl whitespace-nowrap leading-none text-white transition-all duration-500 tracking-wide sm:tracking-widest ${expandedLetter === letter ? 'block md:block' : 'block md:hidden'} flex items-baseline gap-1`}
                   style={{ fontFamily: '"Times New Roman", serif' }}
                 >
                   <span className="text-white text-[clamp(2rem,9vw,2.5rem)] sm:text-4xl md:text-2xl lg:text-3xl md:pl-0 pl-4 [text-shadow:0_0_12px_rgba(255,255,255,0.7)]">
