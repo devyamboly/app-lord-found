@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import SparksButton from "../ui/sparks-button";
 import { CardStepProps } from "@/types/steps";
 
@@ -55,23 +56,14 @@ export default function CardStep({
 
                 {/* CTA */}
                 <div className="pt-2">
-                    {/* <button
-                        className="relative px-7 py-3 rounded-md font-semibold text-sm sm:text-base text-black
-                                             bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500
-                                             shadow-[0_0_0_1px_#F8D55555,0_4px_16px_-2px_rgba(248,213,85,0.55)]
-                                             hover:shadow-[0_0_0_1px_#F8D555AA,0_6px_22px_-2px_rgba(248,213,85,0.75)]
-                                             active:translate-y-[1px] transition-all duration-300 overflow-hidden group/btn"
-                    >
-                        <span className="relative z-10">¿Cómo funciona?</span>
-                        
-                        <span className="pointer-events-none absolute inset-0 before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/50 before:to-transparent before:animate-[shine_2s_linear_infinite]" />
-                    </button> */}
-                    <SparksButton
-                        
-                        className="mt-2 w-full sm:w-fit"
-                    >
-                        ¿Cómo funciona?
-                    </SparksButton>
+                    <Link className="mt-2 w-full sm:w-fit block animate-button-glow" href="https://users.lordfound.com/dashboard" >
+                        <SparksButton
+                            
+                            className=""
+                        >
+                            ¿Cómo funciona?
+                        </SparksButton>
+                    </Link>
                 </div>
             </div>
             <div className="pointer-events-none absolute inset-0 rounded-2xl border border-yellow-500/20 group-hover:border-yellow-400/60 transition-colors duration-500" />
