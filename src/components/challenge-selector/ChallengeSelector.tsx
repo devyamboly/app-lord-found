@@ -49,10 +49,13 @@ export default function ChallengeSelector(){
                 </h3>
 
                 <h3
-                  className={`font-extrabold text-base sm:text-lg md:text-xl lg:text-2xl whitespace-nowrap transition-all duration-500 ${expandedLetter === letter ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-50 absolute translate-x-4'}`}
+                  className={`font-extrabold text-sm sm:text-lg md:text-xl lg:text-2xl whitespace-nowrap text-yellow-100 transition-all duration-500 ${expandedLetter === letter ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-50 absolute translate-x-4'}`}
                   style={{ fontFamily: '"Times New Roman", serif' }}
                 >
-                  {word}
+                  <span className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">
+                    {word.slice(0, 1)}
+                  </span>
+                  {word.slice(1)}
                 </h3>
               </div>
 
