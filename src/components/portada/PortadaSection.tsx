@@ -31,7 +31,7 @@ export default function PortadaSection(){
                     Pagos rápidos y sin complicaciones
                 </p>
 
-                <ButtonNav className="w-[100%] md:w-auto text-lg mx-auto md:mx-0 px-20 sm:px-8 md:px-24 py-[5px] hover:scale-105 hover:ease-in-out hover:transition-all hover:duration-500" href="https://users.lordfound.com/register">Fondéate Ahora</ButtonNav>
+                <ButtonNav className="w-[100%] md:w-auto text-lg mx-auto md:mx-0 px-20 sm:px-8 md:px-24 py-[5px] hover:scale-105 hover:ease-in-out hover:transition-all hover:duration-500" href="#planes">Fondéate Ahora</ButtonNav>
             </div>
 
             <div className="w-full md:w-[50%] mt-8 md:mt-0 mb-4 md:flex justify-end items-center">
