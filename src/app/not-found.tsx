@@ -1,9 +1,22 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useTransition } from "react";
 
 import MainButton from "@/components/common/MainButton";
 import SectionReveal from "@/components/common/SectionReveal";
 
 export default function NotFound() {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
+  const handleScrollToPlans = () => {
+    startTransition(() => {
+      router.push("/#planes");
+    });
+  };
+
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#0b101f] px-6 py-16 text-white">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-amber-500/10 via-transparent to-amber-500/5" />
@@ -29,14 +42,14 @@ export default function NotFound() {
             </MainButton>
           </Link>
 
-          <Link href="/challenge">
-            <MainButton
-              className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-200"
-              icon={<span className="mr-2 text-xl">🚀</span>}
-            >
-              Ver planes de fondeo
-            </MainButton>
-          </Link>
+          <MainButton
+            className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-200"
+            icon={<span className="mr-2 text-xl">🚀</span>}
+            onClick={handleScrollToPlans}
+            disabled={isPending}
+          >
+            Ver planes de fondeo
+          </MainButton>
         </div>
       </SectionReveal>
 

@@ -8,11 +8,13 @@ import TestimonialsSection from "@/components/testimonials/TestimonialsSection";
 import FAQSection from "@/components/faq/FAQSection";
 import CommunitySection from "@/components/community/CommunitySection";
 import SectionReveal from "@/components/common/SectionReveal";
+import HashScroll from "@/components/common/HashScroll";
 
 export default function Home() {
   return (
     <main className="w-full">
       <div className="space-y-8">
+        <HashScroll />
         <SectionReveal>
           <PortadaSection/>
         </SectionReveal>
