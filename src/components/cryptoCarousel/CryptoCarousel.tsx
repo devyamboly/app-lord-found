@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Image from "next/image";
 
 const logos = [
     "/cryptos/Etherum-150x75.png",
@@ -74,25 +75,29 @@ export default function CryptoCarousel() {
                                         key={`first-${i}`}
                                         className="shrink-0 flex items-center justify-center w-[100px] h-12 sm:w-[120px] sm:h-14 md:w-[150px] md:h-16 px-2 sm:px-3"
                                     >
-                                        <img
+                                        <Image
                                             src={src}
                                             alt="logo partner"
                                             className="max-h-full max-w-full object-contain brightness-125 saturate-[1.8] contrast-110"
+                                            width={150}
+                                            height={40}
                                         />
                                     </div>
                                 ))}
                             </div>
                             {/* Segundo set de logos (duplicado para loop infinito) */}
-                            <div className="flex gap-6 sm:gap-8 md:gap-10 sm:ml-4 ml-6 sm:ml-8 md:ml-10">
+                            <div className="flex gap-6 sm:gap-8 md:gap-10 ml-6 sm:ml-8 md:ml-10">
                                 {logos.map((src, i) => (
                                     <div
                                         key={`second-${i}`}
                                         className="shrink-0 flex items-center justify-center w-[100px] h-12 sm:w-[120px] sm:h-14 md:w-[150px] md:h-16 px-2 sm:px-3"
                                     >
-                                        <img
+                                        <Image  
                                             src={src}
                                             alt="logo partner"
                                             className="max-h-full max-w-full object-contain brightness-125 saturate-[1.8] contrast-110"
+                                            width={150}
+                                            height={40}
                                         />
                                     </div>
                                 ))}
