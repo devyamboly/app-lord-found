@@ -5,6 +5,7 @@ import ButtonNav from "./ButtonNav";
 import {ITEMNAV} from "../../mocks/itemNav";    
 import ButtonLogin from "./ButtonLogin";
 import { useSmoothScroll } from "../../hooks/useSmoothScroll";
+import Image from "next/image";
 
 export default function NavbarSection(){
     const [open, setOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function NavbarSection(){
                 ? 'md:backdrop-blur-md md:bg-black/40 md:border-b md:border-white/10 md:shadow-lg md:shadow-black/20' 
                 : ' md:bg-black/20 md:border-b-0 md:border-white/5'
         } bg-black`}>
-            <img className="w-45 sm:w-40 md:w-44 lg:w-48" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
+            <Image width={190} height={40} className="w-45 sm:w-40 md:w-44 lg:w-48" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
 
             <div className="flex md:hidden gap-3 items-center">
                 <ButtonNav className="text-sm px-4 py-1.5" href="https://users.lordfound.com/login">Empezar</ButtonNav>

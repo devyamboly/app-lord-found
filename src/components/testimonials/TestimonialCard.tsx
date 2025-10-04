@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { currency } from "@/helpers/challenge-sizes";
+import Image from "next/image";
 
 interface TestimonialCardProps {
   name: string;
@@ -39,7 +40,9 @@ export default function TestimonialCard({ name, payout, quote, imageSrc }: Testi
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-amber-500 to-orange-500 rounded-full animate-pulse opacity-50 blur-md"></div>
               {imageSrc ? (
-                <img
+                <Image
+                  width={96}
+                  height={96}
                   src={imageSrc}
                   alt={`Foto de ${name}`}
                   className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-amber-500/60 ring-4 ring-amber-500/20 shadow-xl shadow-amber-500/30 group-hover:border-amber-400 group-hover:ring-amber-400/30 transition-all duration-300 group-hover:scale-105"

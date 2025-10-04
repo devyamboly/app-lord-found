@@ -1,5 +1,6 @@
 import { Instagram, Facebook,  } from "lucide-react";
 import { FaTiktok } from 'react-icons/fa';
+import Image from "next/image";
 
 export default function FooterSection(){
 
@@ -12,7 +13,7 @@ export default function FooterSection(){
                 <div className="pt-10  sm:pt-12 px-6 sm:px-8 md:px-10 border-b border-gray-700 pb-10 sm:pb-12">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start w-full space-y-8 md:space-y-0 md:space-x-8">
                         <div className="flex flex-col md:block justify-center md:justify-cente items-center md:items-start pb-4 md:pr-6 w-full md:w-[40%]">
-                            <img className="w-40 sm:w-48 md:w-52 lg:w-56 mx-auto" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
+                            <Image width={190} height={40} className="w-40 sm:w-48 md:w-52 lg:w-56 mx-auto" src="/logo-4-versiones_Mesa-de-trabajo-1-copia-scaled-e1755857831135-2048x457.png" alt="Logo" />
                             <div>
                                 <div className="pt-4 space-x-4 sm:space-x-6 flex items-center justify-center">
                                     <a target="_blank" rel="noopener noreferrer" aria-label="Instagram de LordFound" href="https://www.instagram.com/lordfound.fx">

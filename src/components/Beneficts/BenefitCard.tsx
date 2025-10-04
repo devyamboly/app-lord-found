@@ -1,5 +1,6 @@
 import { Benefit } from "@/types/benefits";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 interface BenefitCardProps {
   benefit: Benefit;
@@ -13,10 +14,12 @@ export const BenefitCard = ({ benefit }: BenefitCardProps) => (
       <CardContent className="relative z-10 flex h-full flex-col gap-6 p-8">
         <div className="flex items-center gap-5">
           <div className="flex h-20 w-full items-center justify-center rounded-2xl ">
-            <img
+            <Image
               src={benefit.icon}
               alt={benefit.title}
               className="w-20 object-contain mix-blend-multiply"
+              width={70}
+              height={70}
             />
           </div>
         </div>
