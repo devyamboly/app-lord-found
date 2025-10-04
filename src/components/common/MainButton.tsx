@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function MainButton({
-  icon,
+  icon = null,
   children,
   onClick,
   disabled = false,
   className,
 }: {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;

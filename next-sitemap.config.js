@@ -40,6 +40,7 @@ const siteConfig = {
       alternateRefs: config.alternateRefs ?? [],
     };
   },
+  
 };
 
 module.exports = siteConfig;
