@@ -36,7 +36,6 @@ export default function NotFound() {
           <Link href="/">
             <MainButton
               className="w-full sm:w-auto"
-              icon={<span className="mr-2 text-xl">🏠</span>}
             >
               Volver al inicio
             </MainButton>
@@ -44,7 +43,6 @@ export default function NotFound() {
 
           <MainButton
             className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-200"
-            icon={<span className="mr-2 text-xl">🚀</span>}
             onClick={handleScrollToPlans}
             disabled={isPending}
           >
