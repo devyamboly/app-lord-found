@@ -31,28 +31,30 @@ export default function CardStep({
             </div>
 
             {/* Inner content */}
-            <div className="relative z-10 rounded-2xl bg-[#111]/90 backdrop-blur-sm px-7 pt-14 pb-10 flex flex-col items-center text-center gap-6 h-full">
+            <div className="relative z-10 rounded-2xl bg-[#111]/90 backdrop-blur-sm px-7 pt-14 pb-10 flex flex-col items-center justify-between text-center gap-1 h-full">
 
-                <div className="relative">
-                    <span className="absolute inset-0 animate-ping-slow rounded-full bg-yellow-400/10" />
-                    <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-yellow-500/15 to-yellow-400/5 border border-yellow-400/40 shadow-[0_0_0_1px_#F8D55533,0_4px_18px_-2px_rgba(248,213,85,0.25)] relative">
-                        {icon}
-                        <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_8px_2px_#F8D555AA] animate-pulse" />
-                        <span className="absolute -bottom-1 -left-1 w-1.5 h-1.5 rounded-full bg-yellow-200 shadow-[0_0_6px_2px_#F8D555AA] animate-pulse [animation-delay:400ms]" />
+                <div className="flex flex-col items-center gap-6">
+                    <div className="relative">
+                        <span className="absolute inset-0 animate-ping-slow rounded-full bg-yellow-400/10" />
+                        <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-yellow-500/15 to-yellow-400/5 border border-yellow-400/40 shadow-[0_0_0_1px_#F8D55533,0_4px_18px_-2px_rgba(248,213,85,0.25)] relative">
+                            {icon}
+                            <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_8px_2px_#F8D555AA] animate-pulse" />
+                            <span className="absolute -bottom-1 -left-1 w-1.5 h-1.5 rounded-full bg-yellow-200 shadow-[0_0_6px_2px_#F8D555AA] animate-pulse [animation-delay:400ms]" />
+                        </div>
                     </div>
+
+                    
+
+                    {/* Título */}
+                    <h3 className="text-white text-xl sm:text-2xl font-semibold leading-snug max-w-[22ch]">
+                        {title}
+                    </h3>
+
+                    {/* Descripción */}
+                    <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-[40ch]">
+                        {description}
+                    </p>
                 </div>
-
-                
-
-                {/* Título */}
-                <h3 className="text-white text-xl sm:text-2xl font-semibold leading-snug max-w-[22ch]">
-                    {title}
-                </h3>
-
-                {/* Descripción */}
-                <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-[40ch]">
-                    {description}
-                </p>
 
                 {/* CTA */}
                 <div className="pt-2">
