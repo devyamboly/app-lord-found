@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     "lord found trading",
     "lord found inversiones",
     "lord found plataforma",
+    "prop firm trading",
+    "propfirm",
+    "prop firm",
   ],
   authors: [{ name: "Lord Found", url: "https://lordfound.com/" }],
   creator: "Lord Found",
@@ -50,6 +53,9 @@ export const metadata: Metadata = {
   category: "Finance",
   alternates: {
     canonical: "https://lordfound.com/",
+    languages: {
+      "es-ES": "https://lordfound.com/",
+    }
   },
   robots: {
     index: true,
@@ -72,7 +78,7 @@ export const metadata: Metadata = {
     siteName: "Lord Found",
     images: [
       {
-        url: "https://lordfound.com/og.png",
+        url: "https://lordfound.com/icono-destellos.png",
         width: 1200,
         height: 630,
         alt: "Lord Found plataforma de trading",
@@ -86,8 +92,8 @@ export const metadata: Metadata = {
     title: "Lord Found | Plataforma profesional de trading",
     description:
       "Impulsa tus inversiones con Lord Found, la plataforma profesional de trading con herramientas avanzadas, ejecución segura y soporte experto para mercados globales.",
-    images: ["https://lordfound.com/og.png"],
-  },
+    images: ["https://lordfound.com/icono-destellos.png"],
+  }
 };
 
 export default function RootLayout({
@@ -98,8 +104,37 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        
-
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FinancialService",
+              name: "LordFound",
+              url: "https://lordfound.com",
+              logo: "https://lordfound.com/icono-destellos.png",
+              description: "LordFound is a prop trading firm offering funded accounts for forex, crypto and stock traders.",
+              sameAs: [
+                "https://www.facebook.com/profile.php?id=61577216593314",
+                "https://www.tiktok.com/@lordfound.fx",
+                "https://www.instagram.com/lordfound.fx"
+              ],
+              serviceType: "Prop Firm Trading Accounts",
+              areaServed: {
+                "@type": "Country",
+                name: "Worldwide"
+              },
+              offers: {
+                "@type": "Offer",
+                name: "Funded Trading Account",
+                url: "https://lordfound.com",
+                price: "39",
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock"
+              }
+            }),
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-hidden`} cz-shortcut-listen="true"
