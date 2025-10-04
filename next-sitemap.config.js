@@ -3,22 +3,12 @@ const siteConfig = {
   siteUrl: "https://lordfound.com",
   outDir: "public",
   generateRobotsTxt: true,
-  changefreq: "weekly",
-  priority: 0.7,
-  sitemapSize: 5000,
+  changefreq: "daily",
+  priority: 1.0,
+  sitemapSize: 7000, // evita dividir en sitemap-0
   trailingSlash: true,
   autoLastmod: true,
   exclude: ["/404", "/500", "/api/*"],
-  alternateRefs: [
-    {
-      href: "https://lordfound.com/",
-      hrefLang: "es",
-    },
-    {
-      href: "https://lordfound.com/",
-      hrefLang: "x-default",
-    },
-  ],
   robotsTxtOptions: {
     policies: [
       {
@@ -28,19 +18,14 @@ const siteConfig = {
     ],
   },
   transform: async (config, path) => {
-    const priorityByPath = {
-      "/": 1.0,
-    };
-
     return {
       loc: path,
-      changefreq: path === "/" ? "daily" : config.changefreq || "weekly",
-      priority: priorityByPath[path] ?? config.priority ?? 0.7,
+      changefreq: path === "/" ? "daily" : "weekly",
+      priority: path === "/" ? 1.0 : 0.7,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-      alternateRefs: config.alternateRefs ?? [],
+      alternateRefs: config.alternateRefs,
     };
   },
-  
 };
 
 module.exports = siteConfig;
